@@ -1,0 +1,9 @@
+body {
+  width: 40%;
+  margin: 3rem auto 3rem auto;
+  background-color: #efefef;
+}
+
+p, li {
+  font-size: 1.3rem;
+}
