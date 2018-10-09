@@ -7,3 +7,16 @@ body {
 p, li {
   font-size: 1.3rem;
 }
+
+img,
+table {
+  width: 100%;
+}
+
+td {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+}

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Project Design P2 - Group 7</title>
+    <link rel="stylesheet" href="./document_style.css">
+  </head>
+  <body>
+    <header>
+      <h1>P2 project design</h1>
+      <hr>
+      <h4>Authors</h4>
+      <p>
+        Fredrik August Madsen-Malmo, Erik Skår, Andreas Winther Moen, Leonard Nguyen Schøyen
+      </p>
+      <h4>Date</h4>
+      <p>
+        05/10-2018
+      </p>
+    </header>
+    <hr>
+    <article>
+      <section>
+        <h2>Administrative details</h2>
+        <h4>Name of client</h4>
+        <p>Igor Vasiliev Ivanovich</p>
+        <h4>Name of organization</h4>
+        <p>Góðr fæða</p>
+      </section>
+      <section>
+        <h2>Purpose, goals, and audience</h2>
+        <p>
+          We're making a website for a fictional upper-class restaurant named
+          Góðr fæða. The name of the website means 'good food' in Old Norse, and
+          the restaurant serves traditional Norwegian food with high quality.
+          The purpose of the website is to show off the restaurant, as well as
+          let the user see the menu and reserve a table. The target audience is
+          upper-class citizens who appreciate good food, hence our goal is to
+          apply a minimalistic but yet extravagant design to the website.
+        </p>
+      </section>
+      <section>
+        <h2>Navigation structure</h2>
+        <p>
+          The website will be a one-page site, and there will not be a
+          traditional navbar linking to other HTML files. Instead we will link
+          to different sections of the index.html. The reason for choosing this
+          approach is because the entire content of the website can easily fit
+          inside one document, and opening separate pages would break the
+          minimalistic immersion. Having separate pages would not increase the
+          user experience.
+        </p>
+        <p>
+          We will use <em>hijack-scrolling</em>[When the user scrolls the page
+          moves one full view at the time] to make sure the page looks clean at
+          all times. On the right side there will be a minimalistic scrollbar in
+          the form of vertically aligned dots.  The scrollbar will highlight
+          which part of the site the user is currently at, and it will allow the
+          user to go directly to any part of the site like a normal navbar would
+          do.
+        </p>
+      </section>
+      <section>
+        <h2>Page layout and appearance</h2>
+        <p>
+          When planning the design of the website we have focused on the target
+          audience. We will apply an artistic theme to the website which gives a
+          good first impression of both the website and the restaurant itself. A
+          common problem with such simplistic designs is it may become a bit
+          chaotic for the user to navigate throughout the website. Therefore, it
+          is important that we find ways to make the website both artistic and
+          intuitive.
+        </p>
+        <p>
+          The front page will feature a <em>jumbotron</em>[A large block of
+          content displaying the intent of the website.] of Norwegian nature. It
+          will be a video of the forest with a still camera which will recorded
+          by us. The video will be sped up to give a neat effect.  We will use a
+          media query to replace the video with a still image on mobile devices
+          to reduce mobile bandwidth usage and lower the loading time on
+          possibly slow mobile networks.
+        </p>
+        <p>
+          When the user scrolls down they get to the menu section. This will be
+          split into four categories, represented by the four different seasons.
+          When hovering over one category, the category expands horizontally
+          slightly. When the user clicks a category it expands further and
+          brings up a menu. We will add a media query to make the categories
+          expand vertically instead of horizontally on vertically aligned mobile
+          devices. The color of the font will be the average color of the season
+          picture, and the background panel will be white and slightly
+          transparent to make the text more readable. A wine chart may be
+          brought up from the bottom by either clicking or dragging the button.
+          The user must be able to get back to the main menu easily and
+          intuitively with a back button.
+        </p>
+        <p>
+          The next panel will be a table reservation page. Here the user
+          provides name, number of people, a phone number and the desired date.
+          This will be a very simplistic page with only a background, the panel
+          and four input fields. The placeholder text of the input field will
+          tell the user the type of input desired, which will disappear when the
+          user starts typing. The color of the text will be gray to make the
+          page look minimalistic.
+        </p>
+        <p>
+          The last panel will be a footer with Google Maps integration and
+          contact information (phone number and email address). Clicking on the
+          map will open an external Google Maps website. The address will be a
+          fictional one. The footer will not cover the whole page, to indicate
+          that this is the end of the website.
+        </p>
+
+        <section>
+          <h3>Specific styling</h3>
+          <ul>
+            <li>
+              Background images: Each background image will cover the whole
+              page, and vary depending on the page.
+            </li>
+            <li>
+              Font: The font must be modern and minimalistic. Thus we will use a
+              sans serif font. The font used in the current sketch is called
+              Poiret One, but this may be subject to change. The font sizes are
+              not yet determined. However, since the amount of text on each page
+              is fairly low, we will use a large text to fill the page.
+            </li>
+            <li>
+              Color scheme: Since the food will be based on four different
+              seasons, we will use very distinctive colors for each menu to
+              represent the specific season. As mentioned, the color of the font
+              on each menu will be the average color of the season picture
+              behind. For the rest of the pages the font color will be either
+              white or gray depending on the background.
+            </li>
+            <li>
+              Scroll indicator: As mentioned there will be a scroll indicator on
+              the right with one dot for each page. The dot representing the
+              current site will be highlighted by filling the dot. The scrollbar
+              will essentially replace the navbar. Clicking on a dot will open
+              the corresponding page.
+            </li>
+            <li>
+              Logo: There will be a logo on the front page. So far we only have
+              a sketch of the logo, and therefore the position and size of the
+              logo, as well as the overall appearance of the front page are not
+              yet fully determined. The logo will most likely be in the top left
+              corner with the name of the restaurant centered on the page and
+              aligned to the left with some padding.
+            </li>
+          </ul>
+        </section>
+      </section>
+      <section>
+        <h2>Content</h2>
+        <section>
+          <h3>Frontpage</h3>
+          <p>
+            This will be a simple page with a background video and some text
+            displaying the name of the restaurant, as well as an introduction in
+            the form of a short paragraph. The sole purpose of this frontpage is
+            to set the theme for the rest of the website -- nature. This will be
+            achieved by a tranquil nature video, as well as a focus on nature in
+            the introductory paragraph. The text will be centered on the page, and
+            aligned to the left side of the viewport, though with some padding.
+            The video will be muted, autoplay, and put on repeat.
+          </p>
+          <img src="./p2_images/frontpage.png" alt="Picture of the frontpage">
+        </section>
+        <section>
+          <h3>Season select</h3>
+          <p>
+            This is the <em>main content</em> of the website, this is where you
+            select which season you would like to view the menu for.
+          </p>
+          <img src="./p2_images/season-select.png" alt="Picture of the season
+          select page">
+          <p>
+            You can hover a season, and watch it expand slightly to indicate
+            that it is being targeted. If you decide to click it, you will be
+            taken to the next section, which is the "show season" part.
+          </p>
+          <p>
+            Each of the seasons will be 25% width upon first entering the view,
+            but the hovered season will expand to take up ~35%, while the others
+            decrease accordingly. This will give the user a feeling of
+            responsiveness, and it will feel intuitive to click a season.
+          </p>
+          <p>
+            Upon clicking, it will expand to 85% width, and the others decrease
+            to 5%, and the next view will be rendered.
+          </p>
+        </section>
+        <section>
+          <h3>Show season</h3>
+          <p>
+            Here you will be able to see the menu for the selected season. The
+            thought is that you should be able to order a menu themed to a
+            season in the restaurant. There will be a relatively small button on
+            the bottom of the menu card to show the wine chart, which will slide
+            up on click (discussed further in section "Minimum requirements"),
+            and render the wine chart in full.
+          </p>
+          <img src="./p2_images/season-show.png" alt="Show a season page">
+        </section>
+        <section>
+          <h3>Show wine chart</h3>
+          <p>
+            This is merely an extension of the previous "view", as this is just
+            an extra block sliding into view, showing the wine chart. 
+          </p>
+          <img src="./p2_images/season-wine.png" alt="Wine chart menu">
+        </section>
+        <section>
+          <h3>Order table</h3>
+          <p>
+            This part of the page will have a white block containing form inputs
+            for relevant information associated with ordering of a table at a
+            restaurant; name, how many the table should be reserved for, phone
+            number, and a date. Upon submitting the form, the user will be
+            prompted with either a success, or a failure, depending on the
+            validity of the input. If no errors are encountered, the form inputs
+            will slide out of view, and a success message will be shown in place
+            of the inputs.
+          </p>
+          <img src="./p2_images/order-table.png" alt="Picture of the order table
+          menu">
+        </section>
+        <section>
+          <h3>Map and footer</h3>
+          <p>
+            On the bottom of the page you will encounter a map, followed by a
+            small footer. The map will show the location of the restaurant, and
+            will be an embedded Google Maps widget. The footer will simply be a
+            list of contact information for the restaurant.
+          </p>
+          <img src="./p2_images/map.png" alt="Image of the footer and map">
+        </section>
+      </section>
+      <section>
+        <h2>Minimum requirements</h2>
+        <ul>
+          <li>
+            Lazy loading of images. To improve the loading time of the
+            application, we will not load any images except the banner image on
+            initial load, but instead load them asynchronously with JavaScript.
+          </li>
+          <li>
+            Animations: We will use JavaScript for a number of animations on our
+            site. For example, when the user clicks or hovers seasons in season
+            select, or when pulling up the wine chart. Without the animations
+            the site will feel static and low-effort, and due to our primary
+            target audience being high-class, we need to provide the best
+            possible impression.
+          </li>
+          <li>
+            Scrolling: By tapping into the event listener for scrolling we can
+            override the default scroll system and make our own. This will make
+            sure that we can tailor the experience for each of the sections to
+            present the restaurant in a satisfactory manner.
+          </li>
+          <li>
+            Scroll indicators: With JavaScript we will make scroll indicators
+            with fixed position that show which page the user is currently on.
+            One function that takes the number of the views the user is
+            currently on and switches up which indicator, or dot, is highlighted
+            will be sufficient to relay the desired information. We need to
+            ensure this function is always called when the view changes.
+          </li>
+          <li>
+            Form feedback: We will use JavaScript to evaluate the authenticity
+            of form input data client-side before it is sent to the imaginary
+            server. This validation is very important to protect the server from
+            malicious attacks.
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>Plan</h2>
+        <p>
+          We believe working as a group produces the best overall result because
+          it gives a more consistent styling and wording. Thus, no files will be
+          made solely by one person. However, we will divide the website into
+          several sections. Each section will have one person responsible for
+          assuring optimal quality of the section. All the files and subfolders
+          will be gathered inside this folder:
+        </p>
+        <ul>
+          <li>index.html</li>
+          <li>images/</li>
+          <ul>
+            <li>frontpage.mp4</li>
+            <li>frontpage.png</li>
+            <li>logo.png</li>
+            <li>seasons/</li>
+            <ul>
+              <li>spring.png</li>
+              <li>summer.png</li>
+              <li>fall.png</li>
+              <li>winter.png</li>
+            </ul>
+            <li>tableReservation.png</li>
+          </ul>
+          <li>css/</li>
+          <ul>
+            <li>style.css</li>
+          </ul>
+          <li>scripts/</li>
+          <ul>
+            <li>script.js</li>
+          </ul>
+        </ul>
+        <p>
+          The final project is due November 11th. To ensure a high quality of
+          the website we believe it is important to start early and to have a
+          good plan for the development of each section. We have set a deadline
+          for each section and a person responsible for that particular section.
+          The first sub project is to finish the html document. This will
+          provide an overview of the whole page. Then basic css and hijack
+          scrolling should be implemented to get an impression of how the final
+          website will look. Then we will finish the styling, the animations and
+          the scrollbar. Finally we must find or record video and images. The
+          images may be taken from a royalty-free website. 
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <td>File name</td>
+              <td>Work section</td>
+              <td>Leader</td>
+              <td>Deadline</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5">index.html</td>
+              <td>Front page: header and div for logo</td>
+              <td>Fredrik</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td>Menu: four menus containing a header and text</td>
+              <td>Andreas</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td>Wine menu: menus with wines for each season/menu</td>
+              <td>Erik</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td>Table reservation: a header and 4 input tags</td>
+              <td>Leonard</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td>Footer; two p tags and a div for GMaps</td>
+              <td>Leonard</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td rowspan="2"></td>
+              <td>Basic: make background fill page, set font colors</td>
+              <td>Fredrik</td>
+              <td>28/10/2018</td>
+            </tr>
+            <tr>
+              <td>Other: style scrollbar</td>
+              <td>Erik</td>
+              <td>01/11/2018</td>
+            </tr>
+            <tr>
+              <td rowspan="3">script.js</td>
+              <td>Hijack-scrolling: custom scroll system to scroll whole page</td>
+              <td>Andreas</td>
+              <td>01/11/2018</td>
+            </tr>
+            <tr>
+              <td>Animations: transition between pages. "Season enlargement"</td>
+              <td>Erik</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>Other: Lazy loading. Form feedback. Responsive scrollbar</td>
+              <td>Erik</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>logo.png</td>
+              <td>Finalize logo</td>
+              <td>Andreas</td>
+              <td>01/11/2018</td>
+            </tr>
+            <tr>
+              <td>frontpage.mp4</td>
+              <td>Record video of forest</td>
+              <td>Everyone</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>frontpage.jpg</td>
+              <td>Still image of video</td>
+              <td>Everyone</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>seasons/</td>
+              <td>Find suitable background image for each season</td>
+              <td>Erik</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>reservation.jpg</td>
+              <td>Find suitable backgroundn picture for table reservation page</td>
+              <td>Leonard</td>
+              <td>04/11/2018</td>
+            </tr>
+            <tr>
+              <td>QA</td>
+              <td>
+                General testing. Ensure platform compatibility and
+                responsiveness
+              </td>
+              <td>Fredrik</td>
+              <td>07/11/2018</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </article>
+  </body>
+</html>
