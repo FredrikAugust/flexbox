@@ -115,3 +115,8 @@ footer {
 footer li {
   list-style-type: none;
 }
+
+/* HIDE SCROLLBAR */
+::-webkit-scrollbar {
+    width: 0;
+}

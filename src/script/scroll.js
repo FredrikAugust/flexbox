@@ -4,62 +4,54 @@
  * scroll them to the next page.
  */
 
-let previousScrollPosition = window.pageYOffset;
-
+let previousScrollPosition = 0;
 let position = 0;
 
-let lock = false;
-
-const positionOffsets = [
-  0,
-  window.innerHeight,
-  window.innerHeight * 2,
-  window.innerHeight * 3,
+const anchors = [
+  document.querySelector('header'),
+  document.querySelector('#seasons'),
+  document.querySelector('#reservations'),
+  document.querySelector('footer'),
 ];
 
-window.addEventListener('scroll', (e) => {
+(() => (window.scrollTo(0, 0)))()
+
+window.addEventListener('scroll', function scrollHandler () {
+  // We're hiding the overflow so the user can't scroll when the smooth
+  // scrolling is working its magic. We're also hiding it so that the user won't
+  // see a scrollbar popping up now and then.
+  window.removeEventListener('scroll', scrollHandler);
+  document.querySelector('body').style.overflowY = 'hidden';
+  // Set lock so you can't scroll, and remove it after half a second
+  setTimeout(() => {
+    window.addEventListener('scroll', scrollHandler);
+    previousScrollPosition = document.documentElement.scrollTop;
+    document.querySelector('body').style.overflowY = 'scroll';
+  }, 650);
+
   if (document.documentElement.scrollTop > previousScrollPosition) {
     scrollDown();
   } else {
     scrollUp();
   }
-
-  // Set lock so you can't scroll, and remove it after half a second
-  if (!lock) {
-    lock = true;
-    setTimeout(() => { lock = false; }, 500);
-  } 
-
-  previousScrollPosition = document.documentElement.scrollTop;
 });
-
-const lockGuard = () => {
-  if (lock) {
-    window.scrollTo(0, positionOffsets[position]);
-    return true;
-  }
-
-  return false;
-}
 
 const scrollDown = () => {
   console.log("Scrolling down detected");
 
-  if (lockGuard()) { return; }
-
-  if (position != positionOffsets.length - 1) {
+  if (position != anchors.length - 1) {
+    console.log(`Pos: ${position}->${position+1}`)
     position++;
-    window.scrollTo(0, positionOffsets[position]);
+    anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
 const scrollUp = () => {
   console.log("Scrolling up detected");
 
-  if (lockGuard()) { return; }
-
   if (position != 0) {
+    console.log(`Pos: ${position}->${position-1}`)
     position--;
-    window.scrollTo(0, positionOffsets[position]);
+    anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
