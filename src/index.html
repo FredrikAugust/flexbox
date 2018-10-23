@@ -9,24 +9,32 @@
     <title>God Mat</title>
   </head>
   <body>
-    <div id="jumbotron">
+    <div class="jumbotron full-page">
       <h1>Flexbox</h1>
       <p>God mat og slikt</p>
     </div>
-    <div id="seasons">
-      <div id="spring" class="under-season"></div>
-      <div id="summer" class="under-season"></div>
-      <div id="fall" class="under-season"></div>
-      <div id="winter" class="under-season"></div>
+    <div id="seasons" class="full-page">
+      <div id="spring" class="under-season full-page"></div>
+      <div id="summer" class="under-season full-page"></div>
+      <div id="fall" class="under-season full-page"></div>
+      <div id="winter" class="under-season full-page"></div>
     </div>
-    <div id="reservations">
+    <div id="reservations" class="full-page">
       <div id="form">
         <div id="innerForm">
           <h2>Reserver bord</h2>
-          <input type="text" placeholder="navn"> <br>
-          <input type="text" placeholder="antall personer"> <br>
-          <input type="text" placeholder="telefonnummer"> <br>
-          <input type="text" placeholder ="dato">
+          <div class="form-group">
+            <input type="text" placeholder="navn">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="antall personer">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="telefonnummer">
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder ="dato">
+          </div>
         </div>
       </div>
     </div>

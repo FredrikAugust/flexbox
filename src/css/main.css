@@ -9,7 +9,7 @@ body {
     color: grey;
 }
 
-#jumbotron {
+.jumbotron {
     background-image: url("./../img/jumbotron.jpg");
     background-attachment: fixed;
     background-position: center;
@@ -20,7 +20,7 @@ body {
     text-align: center
 }
 
-#jumbotron h1 {
+.jumbotron h1 {
     padding-top: 45vh;
     padding: 45vh 0 .5em 0;
     text-transform: uppercase;
