@@ -27,6 +27,23 @@ body {
   padding: 45vh 0 .5em 0;
   text-transform: uppercase;
   letter-spacing: 1em;
+  text-align: center;
+  text-indent: 1em;
+  opacity: 0;
+
+  animation-duration: 2s;
+  animation-name: slidein-h1;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.jumbotron p {
+  animation-duration: 1s;
+  animation-name: slidein-p;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  opacity: 0;
 }
 
 /* SEASONS CONTAINER */
@@ -119,4 +136,29 @@ footer li {
 /* HIDE SCROLLBAR */
 ::-webkit-scrollbar {
     width: 0;
+}
+
+/* ANIMATIONS */
+@keyframes slidein-h1 {
+  from {
+    padding-top: 40vh;
+    opacity: 0;
+  }
+
+  to {
+    padding-top: 45vh;
+    opacity: 1;
+  }
+}
+
+@keyframes slidein-p {
+  from {
+    padding-top: 5vh;
+    opacity: 0;
+  }
+
+  to {
+    padding-top: 0vh;
+    opacity: 1;
+  }
 }

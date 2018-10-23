@@ -16,7 +16,7 @@ const anchors = [
 
 (() => (window.scrollTo(0, 0)))()
 
-window.addEventListener('scroll', function scrollHandler () {
+window.addEventListener('scroll', function scrollHandler (e) {
   // We're hiding the overflow so the user can't scroll when the smooth
   // scrolling is working its magic. We're also hiding it so that the user won't
   // see a scrollbar popping up now and then.
@@ -27,13 +27,15 @@ window.addEventListener('scroll', function scrollHandler () {
     window.addEventListener('scroll', scrollHandler);
     previousScrollPosition = document.documentElement.scrollTop;
     document.querySelector('body').style.overflowY = 'scroll';
-  }, 650);
+  }, 600);
 
   if (document.documentElement.scrollTop > previousScrollPosition) {
     scrollDown();
   } else {
     scrollUp();
   }
+
+  prevEventTimestamp = e.timeStamp;
 });
 
 const scrollDown = () => {
