@@ -50,13 +50,13 @@ body {
 
 #seasons {
   width: 100%;
-  display: table;
 }
 
 .under-season {
-  min-width: 25%;
-  display: table-cell;
+  float: left;
   border: none;
+  transition: width .15s;
+  transition-timing-function: ease-in-out;
 }
 
 /* SEASON STYLING */
