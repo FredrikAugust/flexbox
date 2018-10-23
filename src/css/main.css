@@ -5,6 +5,7 @@ body {
     font-size: 2em;
     color: grey;
 }
+
 #jumbotron {
     background-image: url("img/jumbotron.jpg");
     background-attachment: fixed;
@@ -15,17 +16,20 @@ body {
     color: white;
     text-align: center
 }
+
 #jumbotron h1 {
     margin: 0;
     padding-top: 50vh;
     text-transform: uppercase;
     letter-spacing: 1em;
 }
+
 #seasons {
     height: 100vh;
     width: 100%;
     display: table;
 }
+
 .underSeason {
     min-width: 25%;
     min-height: 100vh;
@@ -34,15 +38,19 @@ body {
     margin: 0;
     border: none;
 }
+
 #spring {
     background-color: green;
 }
+
 #summer {
     background-color: blue;
 }
+
 #fall {
     background-color: orange;
 }
+
 #winter {
     background-color: grey;
 }
@@ -55,6 +63,7 @@ body {
     background-size: cover;
     background-position: center;
 }
+
 #form {
     background-color: white;
     width: 50%;
@@ -63,13 +72,16 @@ body {
     margin-top: 5vh; 
     position: absolute;
 }
+
 #innerform h2 {
     margin: 0;
     color: grey;
 }
+
 #innerForm {
     padding: 15% 15%; 
 }
+
 #innerForm input {
     border: 0;
     border-bottom: 1px solid grey;
