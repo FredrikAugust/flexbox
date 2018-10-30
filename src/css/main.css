@@ -6,6 +6,7 @@
 body {
   font-family: 'Poiret One', 'Roboto', 'sans-serif';
   color: grey;
+  overflow-x: hidden;
 }
 
 
@@ -52,29 +53,37 @@ body {
   width: 100%;
 }
 
+/* SEASON STYLING */
 .under-season {
+  width: 25%;
+  height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
   float: left;
   border: none;
   transition: width .15s;
   transition-timing-function: ease-in-out;
 }
-
-/* SEASON STYLING */
-
+.under-season div {
+  visibility: hidden;
+  transition: visibility .15s;
+  transition-delay: 0.15s;
+  transition-timing-function: ease-in-out;
+}
+.under-season div:hover {
+  transition-delay: 0s;
+}
 #spring {
-  background-color: green;
+  background-image: url('../img/spring.jpg');
 }
-
 #summer {
-  background-color: blue;
+  background-image: url('../img/summer.jpg');
 }
-
 #fall {
-  background-color: orange;
+  background-image: url('../img/fall.jpg');
 }
-
 #winter {
-  background-color: grey;
+  background-image: url('../img/winter.jpg');
 }
 
 /* CONTACT */
@@ -88,7 +97,7 @@ body {
   font-size: 2em;
 }
 
-#form {
+.form {
   background-color: white;
   width: 50%;
   height: 80vh;

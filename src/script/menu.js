@@ -1,71 +1,45 @@
-/*
- * Logic to handle hovering/clicking on panels in menu.
- */
+let defaultWidth = "25%";
+let hoverWidth = "30%";
+let siblingsHoverWidth = "calc(70%/3)";
+let clickWidth = "60%";
+let siblingsClickWidth = "calc(40%/3)"
+let isClicked = 0;
 
-const seasons = [
-  "spring",
-  "summer",
-  "fall",
-  "winter"
-].map(v => document.querySelector(`#${v}`));
-
-// Init to no selected
-let selected = -1;
-
-function revert() {
-  seasons
-    .forEach((_s) => {
-      _s.classList.remove('shrunk-1', 'shrunk-2', 'expanded-1', 'expanded-2');
-      _s.classList.add('default-size');
-    });
-}
-
-function hoverCallback(e) {
-  seasons
-    .filter((_s) => _s != e.target)
-    .forEach((_s) => {
-      _s.classList.add('shrunk-1');
-      _s.classList.remove('default-size', 'expanded-1', 'expanded-2');
-    });
-
-  e.target.classList.add('expanded-1');
-}
-
-function mouseOutCallback(e) {
-  const which = seasons.indexOf(e.target);
-
-  revert();
-}
-
-seasons.forEach((s) => {
-  s.addEventListener('mouseover', hoverCallback);
-  s.addEventListener('mouseout', mouseOutCallback);
-});
-
-seasons.forEach((s) => {
-  s.addEventListener('click', (e) => {
-    const which = seasons.indexOf(e.target);
-
-    if (e.target.classList.contains('expanded-2')) {
-      seasons.forEach((_s) => {
-        _s.addEventListener('mouseover', hoverCallback);
-        _s.addEventListener('mouseout', mouseOutCallback);
-      });
-
-      revert();
-
-      hoverCallback(e);
-    } else {
-      seasons
-        .filter((_s) => _s != e.target)
-        .forEach((_s) => {
-          _s.removeEventListener('mouseover', hoverCallback);
-          _s.classList.add('shrunk-2');
-          _s.classList.remove('default-size', 'shrunk-1', 'expanded-1', 'expanded-2');
-        });
-
-      seasons.forEach((_s) => _s.removeEventListener('mouseout', mouseOutCallback));
-      e.target.classList.add('expanded-2');
+function expandOnHover() {
+    if(isClicked==0) {
+        shrinkAllChildrenOfParent(this, siblingsHoverWidth);
+        document.querySelector("#" +this.id).style.width = hoverWidth;
+        console.log(this.id);
     }
-  });
-});
+}
+for (i=0;i<document.querySelector("#seasons").children.length;i++) {
+    //console.log( document.querySelector("#seasons").children[i]);
+    document.querySelector("#seasons").children[i].addEventListener("mouseover", expandOnHover);
+    document.querySelector("#seasons").children[i].addEventListener("click", expandOnClick);
+    //document.querySelector("#seasons").addEventListener("mouseleave", resetToDefault);
+
+}
+function shrinkAllChildrenOfParent(dontshrink, siblingwidth) {
+    for(i=0;i<document.querySelector("#seasons").children.length;i++) {
+    document.querySelector("#seasons").children[i].style.width = siblingwidth;
+    document.querySelector("#seasons").children[i].children[0].style.visibility = "hidden";
+    }
+}
+function resetToDefault() {
+        shrinkAllChildrenOfParent(this, defaultWidth);
+        isClicked = 0;
+}
+
+function expandOnClick() {
+    if (isClicked == 0) {
+        shrinkAllChildrenOfParent(this, siblingsClickWidth);
+        document.querySelector("#" +this.id).style.width = clickWidth;
+        document.querySelector("#" +this.id).children[0].style.visibility = "visible";
+        isClicked=1;
+        //console.log("expanded");
+    } else {
+        resetToDefault();
+        isClicked=0;
+        //console.log("default");
+    }
+}
