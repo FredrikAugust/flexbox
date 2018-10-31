@@ -5,35 +5,33 @@
  * Written by Leonard
  */
 
+const STANDARD_DIGITS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
 window.addEventListener("load", function() { // This block will run when site is finished loading
     let input_elements = document.querySelectorAll("#innerForm input");
     // Name
     let name_input_element = input_elements[0];
     // Seats
     let seats_input_element = input_elements[1];
-    seats_input_element.addEventListener("keydown", integer_field_keydown);
+    seats_input_element.addEventListener("input", integer_field_input);
 });
 
-function integer_field_keydown(event) {
-    // Browser independant way to find the keyCode
-    let keyCode = event.which || event.keyCode || 0;
+function integer_field_input(event) {
     let pre_value = event.target.value;
-    console.log(keyCode);
-    // Allows backspace and tab
-    if (keyCode == 8 || keyCode == 9) {
-        return;
-    }
-    // Checks for existing number in field
-    if (pre_value.length == 0) { // If none:
-        if (49 <= keyCode && keyCode <= 57) { // Checks if input is a number between 1 and 9
-            return; // Allows such number
-        }
-    } else if (pre_value.length == 1 || pre_value.length == 2) { // If one or two digit number:
-        if (48 <= keyCode && keyCode <= 57) { // Checks if input is a number between 0 and 9
-            return; // Allows such number
+    let new_value = "";
+    for (let i = 0; i < pre_value.length; i++) {
+        if (
+            STANDARD_DIGITS.includes(pre_value[i]) || // Is character digit from 1 to 9
+            pre_value[i] == "0" && new_value.length != 0 // Is character 0 and is it preceded by other numbers
+        ) {
+            // Add digit to number
+            new_value += pre_value[i];
+            if (new_value.length == 3) { // Checking to see if value is number is max length
+                break; // Stops run-through
+            }
         }
     }
-    event.preventDefault(); // Inhibits all other buttonpresses
+    event.target.value = new_value; // Changes field value to modified value
 }
 
 function submit_to_server(name, seats, phone, date) {
