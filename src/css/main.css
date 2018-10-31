@@ -85,7 +85,30 @@ body {
 #winter {
   background-image: url('../img/winter.jpg');
 }
-
+.under-season>.form {
+  border: 1em solid rgb(190, 211, 1);
+  box-sizing: border-box;
+}
+.exit-button {
+  float: right;
+  padding: 1em;
+  font-size: 2em;
+  font-weight: bolder;
+  cursor: pointer;
+}
+.menu-item {
+  font-size: 2em;
+  padding: 0.5em 1em;
+}
+.menu-title {
+  font-size: 3em;
+  padding: calc((1em/3)*2);
+}
+.menu-price {
+  float: right;
+  padding: 1em;
+  font-size: 1.5em;
+}
 /* CONTACT */
 
 #reservations {
@@ -105,6 +128,7 @@ body {
   margin-top: 10vh; 
   position: absolute;
 }
+
 
 #innerform h2 {
   color: grey;
