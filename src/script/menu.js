@@ -1,71 +1,55 @@
 /*
- * Logic to handle hovering/clicking on panels in menu.
+ * This script is the one responsible for the interactivity of the season menus.
+ * Written completely by Erik Mjaaland Skår
  */
+let defaultWidth = "25%"; //the width of the seasons when the page is loaded
+let hoverWidth = "30%"; //the width of the season that is currently hovered
+let siblingsHoverWidth = "calc(70%/3)"; //the width of the siblings of the season that is currently being hovered
+let clickWidth = "60%"; //the width of the season that is being clicked
+let siblingsClickWidth = "calc(40%/3)" //the width of the siblings of the season that is being clicked
+let isClicked = 0; //checks if any season is currently clicked
 
-const seasons = [
-  "spring",
-  "summer",
-  "fall",
-  "winter"
-].map(v => document.querySelector(`#${v}`));
+const borderColors = ['#E94B3C', '#F3872F', '#DC4C46', '#485167'];
 
-// Init to no selected
-let selected = -1;
 
-function revert() {
-  seasons
-    .forEach((_s) => {
-      _s.classList.remove('shrunk-1', 'shrunk-2', 'expanded-1', 'expanded-2');
-      _s.classList.add('default-size');
-    });
-}
-
-function hoverCallback(e) {
-  seasons
-    .filter((_s) => _s != e.target)
-    .forEach((_s) => {
-      _s.classList.add('shrunk-1');
-      _s.classList.remove('default-size', 'expanded-1', 'expanded-2');
-    });
-
-  e.target.classList.add('expanded-1');
-}
-
-function mouseOutCallback(e) {
-  const which = seasons.indexOf(e.target);
-
-  revert();
-}
-
-seasons.forEach((s) => {
-  s.addEventListener('mouseover', hoverCallback);
-  s.addEventListener('mouseout', mouseOutCallback);
-});
-
-seasons.forEach((s) => {
-  s.addEventListener('click', (e) => {
-    const which = seasons.indexOf(e.target);
-
-    if (e.target.classList.contains('expanded-2')) {
-      seasons.forEach((_s) => {
-        _s.addEventListener('mouseover', hoverCallback);
-        _s.addEventListener('mouseout', mouseOutCallback);
-      });
-
-      revert();
-
-      hoverCallback(e);
-    } else {
-      seasons
-        .filter((_s) => _s != e.target)
-        .forEach((_s) => {
-          _s.removeEventListener('mouseover', hoverCallback);
-          _s.classList.add('shrunk-2');
-          _s.classList.remove('default-size', 'shrunk-1', 'expanded-1', 'expanded-2');
-        });
-
-      seasons.forEach((_s) => _s.removeEventListener('mouseout', mouseOutCallback));
-      e.target.classList.add('expanded-2');
+function expandOnHover() { //the function that changes the width of the seasons when one is hovered
+    if(isClicked === 0) {
+        shrinkAllChildrenOfParent(siblingsHoverWidth);
+        document.querySelector("#" +this.id).style.width = hoverWidth;
+        //console.log(this.id);
     }
-  });
-});
+}
+for (let i = 0; i < document.querySelector("#seasons").children.length; i++) { //adds the different eventListeners to the under-season divs
+    //console.log( document.querySelector("#seasons").children[i]);
+    document.querySelector("#seasons").children[i].addEventListener("mouseover", expandOnHover); //adds the expandOnHover function to all the divs
+    document.querySelector("#seasons").children[i].addEventListener("click", expandOnClick); //adds the expandOnClick function to all the divs
+    //document.querySelector("#seasons").addEventListener("mouseleave", resetToDefault); //optional if you want the menus to be hidden on scroll
+
+}
+function shrinkAllChildrenOfParent(siblingwidth) { //the function which makes sure all the seasons are the appropriate size based on which action is currently being done
+    for(let i = 0; i < document.querySelector("#seasons").children.length; i++) {
+    document.querySelector("#seasons").children[i].style.width = siblingwidth;
+    document.querySelector("#seasons").children[i].children[0].style.visibility = "hidden";
+    }
+}
+function resetToDefault() { //function to make the divs to go back to the default width
+        shrinkAllChildrenOfParent(defaultWidth);
+        isClicked = 0;
+}
+
+function expandOnClick() { //the function which is responsible for expanding the div when clicked and making the content inside visible
+    if (isClicked === 0) {
+        shrinkAllChildrenOfParent(siblingsClickWidth);
+        document.querySelector("#" +this.id).style.width = clickWidth;
+        document.querySelector("#" +this.id).children[0].style.visibility = "visible";
+        isClicked = 1;
+        //console.log("expanded");
+    } else { //if one div is already in a "click-expanded" state, then no other div should be expanded and it should reset to default
+        resetToDefault();
+        isClicked = 0;
+        //console.log("default");
+    }
+}
+for(let i = 0; i < document.querySelectorAll(".under-season").length; i++) {
+  document.querySelectorAll(".under-season")[i].children[0].style.borderColor = borderColors[i];
+}
