@@ -41,7 +41,10 @@ function phone_field_input(event) {
     let pre_value = event.target.value; // Non-modified value
     let new_value = ""; // Current modified value
     for (let i = 0; i < pre_value.length; i++) {
-        if (DIGIT_CHARACTERS.includes(pre_value[i])) {
+        if (
+            DIGIT_CHARACTERS.includes(pre_value[i]) && pre_value[i] != "0" && pre_value[i] != "1" ||
+            (pre_value[i] == "0" || pre_value[i] == "1") && new_value.length != 0
+        ) {
             new_value += pre_value[i];
             if (new_value.length == 8) {
                 break;
