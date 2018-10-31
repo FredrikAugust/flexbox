@@ -6,7 +6,7 @@
 * Create a new branch by typing `git checkout -b <...>`.
 * Add your changes to staging by typing `git add path/to/your/file.html
 path/to/your/second/file.css <...>`. You can also type `git add *` to stage all
-changes.
+changes BUT JUST BECAUSE YOU CAN DOESN'T MEAN YOU SHOULD ERIK SKÅR.
 * Commit your changes by typing `git commit -m "short description of what you've
 changed"`.
 * Then, push to your branch: `git push origin <name of branch you created earlier>`.
