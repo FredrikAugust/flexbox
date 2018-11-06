@@ -64,11 +64,22 @@ body {
   transition: width .15s;
   transition-timing-function: ease-in-out;
 }
-.under-season div {
+@media only screen and (max-width: 768px) {
+  .under-season {
+    height: 25vh;
+    width: 100%;
+  }
+
+}
+.under-season .form {
   visibility: hidden;
   transition: visibility .15s;
   transition-delay: 0.15s;
   transition-timing-function: ease-in-out;
+}
+
+.wine-button {
+  pointer-events: initial;
 }
 .under-season div:hover {
   transition-delay: 0s;
@@ -88,6 +99,7 @@ body {
 .under-season>.form {
   border: 1em solid rgb(190, 211, 1);
   box-sizing: border-box;
+  overflow: scroll;
 }
 .exit-button {
   float: right;
@@ -108,6 +120,20 @@ body {
   float: right;
   padding: 1em;
   font-size: 1.5em;
+}
+
+/* WINE MENU */
+.wine-menu {
+  height: 60vh;
+  background-color: white;
+  margin-top: 2em;
+}
+.wine-button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 1em;
+  margin-left: 25vh;
 }
 /* CONTACT */
 
@@ -149,10 +175,14 @@ body {
 /* MAP */
 
 #map {
-  height: 30vh;
+  height: 50vh;
   background-color: crimson;
 }
-
+.mapouter, .gmap_canvas, #gmap_canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 /* FOOTER */
 
 footer {
@@ -195,3 +225,5 @@ footer li {
     opacity: 1;
   }
 }
+
+

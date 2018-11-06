@@ -16,7 +16,7 @@
       <p>God mat og slikt</p>
     </header>
     <div id="seasons" class="full-page">
-      <div id="spring" class="under-season" data-src="">
+      <div id="spring" class="under-season">
         <div class="form">
             <p class="exit-button">X</p>
             <h2 class="menu-title">Vår</h2>
@@ -25,6 +25,14 @@
             <h3 class="menu-item">Appelsiner</h3>
             <h3 class="menu-item">Sjokolade</h3>
             <h4 class="menu-price">4000kr</h4>
+            <button id="spring-button" onclick="event.stopPropagation()" class="wine-button" type="button" >show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Vår Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">2300kr</h4>
+            </div>
         </div>
       </div>
       <div id="summer" class="under-season">
@@ -36,10 +44,18 @@
             <h3 class="menu-item">Epler</h3>
             <h3 class="menu-item">Bringebærmousse</h3>
             <h4 class="menu-price">6000kr</h4>
+            <button id="summer-button" onclick="event.stopPropagation()" class="wine-button" type="button" >show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Sommer Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">2300kr</h4>
+            </div>
           </div>
       </div>
       <div id="fall" class="under-season">
-          <div class="form">
+          <div class="form" >
             <p class="exit-button">X</p>
             <h2 class="menu-title">Høst</h2>
             <h3 class="menu-item">Lapskaus</h3>
@@ -47,6 +63,14 @@
             <h3 class="menu-item">Potetflak</h3>
             <h3 class="menu-item">Multekrem</h3>
             <h4 class="menu-price">5500kr</h4>
+            <button id="fall-button" onclick="event.stopPropagation()" class="wine-button" type="button">show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Høst Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">2300kr</h4>
+            </div>
           </div>
       </div>
       <div id="winter" class="under-season">
@@ -58,6 +82,14 @@
             <h3 class="menu-item">Sjokoladesouffle</h3>
             <h3 class="menu-item">Krokanis</h3>
             <h4 class="menu-price">4800kr</h4>
+            <button id="winter-button" onclick="event.stopPropagation()" class="wine-button" type="button" >show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Vinter Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">2300kr</h4>
+            </div>
           </div>
       </div>
     </div>
@@ -81,15 +113,23 @@
       </div>
     </div>
     <section id="map">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=ntnu&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+          </div>
+
+        </div>
     </section>
     <footer>
       <ul>
         <li><a>928 48 870</a></li>
-        <li><a>mail.fredrikaugust@gmail.com</a></li>
+        <li><a>mail.godmat@gmail.com</a></li>
       </ul>
     </footer>
 
     <script src="./script/scroll.js"></script>
     <script src="./script/menu.js"></script>
+    <script src="./script/wine.js"></script>
   </body>
 </html>
