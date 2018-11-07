@@ -5,20 +5,11 @@
  * Written by Leonard
  */
 
-const CHARACTERS = [
-    "a", "b", "c", "d", "e",
-    "f", "g", "h", "i", "j",
-    "k", "l", "m", "n", "o",
-    "p", "q", "r", "s", "t",
-    "u", "v", "w", "x", "y",
-    "z", "æ", "ø", "å"
-];
-const DIGIT_CHARACTERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const ERROR_MESSAGES = {
     no_name: "Vennligst fyll inn et navn reservasjonen skal være registrert til.",
     no_seats: "Vennligst skriv inn antall personer de ønsker å reservere bord for.",
     phone_not_complete: "Vennligst skriv inn et gyldig norsk telefon- eller mobilnummer.",
-    date_not_complete: "Vennligst skriv inn en gyldig date."
+    date_not_complete: "Vennligst skriv inn en gyldig dato."
 };
 const MONTHS = [{}, // Phoney element to make the list one-indexed
 { minimum: "ja", name: "januar", size: 31 }, { minimum: "f", name: "februar", size: 28 },
@@ -66,12 +57,13 @@ function date_field_keydown(event) {
     let pre_value = event.target.value;
     if ((event.which || event.keyCode) == 8) {
         for (let i = pre_value.length - 1; i >= 0; i--) {
-            if (DIGIT_CHARACTERS.includes(pre_value[i])) {
+            if (/[0-9]/.test(pre_value[i])) {
                 event.target.value = pre_value.slice(0, i);
                 event.preventDefault();
                 return;
-            } else if (CHARACTERS.includes(pre_value[i])) {
-                while (CHARACTERS.includes(pre_value[i])) {
+            } else if (/[a-zæøå]/.test(pre_value[i])) {
+                i--;
+                while (/[a-zæøå]/.test(pre_value[i])) {
                     i--;
                 }
                 i++;
@@ -92,7 +84,7 @@ function date_field_input(event) {
 
     for (let i = 0; i < pre_value.length; i++) {
         if (state == 0) {
-            if (DIGIT_CHARACTERS.includes(pre_value[i])) {
+            if (/[0-9]/.test(pre_value[i])) {
                 day = day * 10 + parseInt(pre_value[i]);
                 if (day > 31) {
                     day = Math.floor(day / 10);
@@ -113,7 +105,7 @@ function date_field_input(event) {
         }
         if (state > 0) {
             if (
-                DIGIT_CHARACTERS.includes(pre_value[i]) && pre_value[i] != "0" ||
+                /[1-9]/.test(pre_value[i]) ||
                 pre_value[i] == "0" && month.length != 0
             ) {
                 if (month == "") {
@@ -126,7 +118,7 @@ function date_field_input(event) {
                     month = Math.floor(month / 10);
                 }
             }
-            if (CHARACTERS.includes(pre_value[i])) {
+            if (/[a-zæøå]/.test(pre_value[i])) {
                 if (month == 0) {
                     month = "";
                 }
@@ -170,7 +162,7 @@ function integer_field_input(event) {
     let new_value = ""; // Current modified value
     for (let i = 0; i < pre_value.length; i++) {
         if (
-            DIGIT_CHARACTERS.includes(pre_value[i]) && pre_value[i] != "0" || // Is character digit from 1 to 9
+            /[1-9]/.test(pre_value[i]) || // Is character digit from 1 to 9
             pre_value[i] == "0" && new_value.length != 0 // Is character 0 and is it preceded by other numbers
         ) {
             // Add digit to number
@@ -188,8 +180,8 @@ function phone_field_input(event) {
     let new_value = ""; // Current modified value
     for (let i = 0; i < pre_value.length; i++) {
         if (
-            DIGIT_CHARACTERS.includes(pre_value[i]) && pre_value[i] != "0" && pre_value[i] != "1" ||
-            (pre_value[i] == "0" || pre_value[i] == "1") && new_value.length != 0
+            /[2-9]/.test(pre_value[i]) ||
+            /[01]/.test(pre_value[i]) && new_value.length != 0
         ) {
             new_value += pre_value[i];
             if (new_value.length == 8) {
