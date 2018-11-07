@@ -14,11 +14,12 @@ const CHARACTERS = [
     "z", "æ", "ø", "å"
 ];
 const DIGIT_CHARACTERS = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const ERROR_MESSAGES = new Map();
-ERROR_MESSAGES.set("no_name", "Vennligst fyll inn et navn reservasjonen skal være registrert til.");
-ERROR_MESSAGES.set("no_seats", "Vennligst skriv inn antall personer de ønsker å reservere bord for.");
-ERROR_MESSAGES.set("phone_not_complete", "Vennligst skriv inn et gyldig norsk telefon- eller mobilnummer.");
-ERROR_MESSAGES.set("date_not_complete", "Vennligst skriv inn en gyldig date.");
+const ERROR_MESSAGES = {
+    no_name: "Vennligst fyll inn et navn reservasjonen skal være registrert til.",
+    no_seats: "Vennligst skriv inn antall personer de ønsker å reservere bord for.",
+    phone_not_complete: "Vennligst skriv inn et gyldig norsk telefon- eller mobilnummer.",
+    date_not_complete: "Vennligst skriv inn en gyldig date."
+};
 const MONTHS = [{}, // Phoney element to make the list one-indexed
 { minimum: "ja", name: "januar", size: 31 }, { minimum: "f", name: "februar", size: 28 },
 { minimum: "mar", name: "mars", size: 31 }, { minimum: "ap", name: "april", size: 30 },
@@ -255,6 +256,6 @@ function validate_form() {
     if (error === undefined) {
         submit_to_server(name_value, seats_value, phone_value, date_value);
     } else {
-        change_message(ERROR_MESSAGES.get(error));
+        change_message(ERROR_MESSAGES[error]);
     }
 }
