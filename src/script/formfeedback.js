@@ -250,7 +250,7 @@ function validate_form() {
             break;
         }
     }
-    if (!valid_date && !/^(\d+)(\s\/\s)(\d+)$/.test(date_value)) {
+    if (!valid_date && !/^\d{1,2}\s\/\s\d{1,2}$/.test(date_value)) {
         error = "date_not_complete";
     }
     if (error === undefined) {
