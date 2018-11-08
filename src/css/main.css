@@ -1,12 +1,20 @@
-* {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: 'Poiret One', 'Roboto', 'sans-serif';
+  font-family: 'Playfair Display', 'Roboto', 'sans-serif';
   color: grey;
   overflow-x: hidden;
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -155,38 +163,92 @@ body {
 /* CONTACT */
 
 #reservations {
-  width: 100%;
-  background-attachment: fixed;
-  background-image: url("./../img/jumbotron.jpg");
-  background-size: cover;
-  background-position: center;
-  font-size: 2em;
+    width: 100%;
+    background-attachment: fixed;
+    background-image: url("./../img/jumbotron.jpg");
+    background-size: cover;
+    background-position: center;
+    font-size: 2em;
 }
 
 .form {
-  background-color: white;
-  width: 50%;
-  height: 80vh;
-  margin-left: 5%; 
-  margin-top: 10vh; 
-  position: absolute;
+    background-color: white;
+    width: 50%;
+    height: 95vh;
+    margin-top: 2.5vh;
+    margin-left: 5%;
+    position: absolute;
+    color: black;
 }
 
-
-#innerform h2 {
-  color: grey;
+#innerForm h2 {
+    color: black;
+    font-weight: 200;
+    font-size: 1.8em;
+    border-top: 10px solid black;
+    border-bottom: 2px solid black;
+    padding: .2em 0 .3em 0;
 }
 
 #innerForm {
-  padding: 15% 15%; 
+    height: 80vh;
+    box-sizing: border-box;
+    padding: 15% 10%;
+    font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
-  border: 0;
-  border-bottom: 1px solid grey;
-  text-transform: capitalize;
-  padding: 1em;
+    box-sizing: border-box;
+    border: 0;
+    border-bottom: 2px solid #999;
+    font-family: 'Playfair Display', serif;
+    outline: none;
+    text-transform: capitalize;
+    padding: 1em;
+    width: 100%;
+}
+
+#innerForm input::placeholder {
+    color: rgba(0, 0, 0, 0.9);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+}
+
+#innerForm span {
+    font-size: 20px;
+    margin: 2em 0;
+    display: block;
+    color: crimson;
+}
+
+#innerForm .form-group:not(:last-of-type) {
+  margin-top: .5em;
+}
+
+#innerForm .form-group:first-of-type {
+  margin-top: 2em;
+}
+
+#innerForm .form-group:last-of-type {
+  position: absolute;
+  bottom: 10%;
   width: 80%;
+}
+
+#innerForm .form-group:last-of-type input[type="button"] {
+  background: white;
+  border-top: 3px solid #123123;
+  border-bottom: 2px solid #123123;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.5em;
+  letter-spacing: 2px;
+}
+
+#innerForm .form-group:last-of-type input[type="button"]:hover {
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 
 /* MAP */
