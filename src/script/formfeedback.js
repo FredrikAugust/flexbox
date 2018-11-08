@@ -211,10 +211,8 @@ function phone_field_input(event) {
 }
 
 function submit_to_server(name, seats, phone, date) {
-    let success = true;
-    if (success) {
-        change_message("Reservasjonen er vellykket.");
-    }
+    /* Mocked as there's no back-end */
+    change_message("Reservasjonen er vellykket.");
 }
 
 function validate_form() {
@@ -245,7 +243,7 @@ function validate_form() {
     if (!valid_date && !/^\d{1,2}\s\/\s\d{1,2}$/.test(date_value)) {
         error = "date_not_complete";
     }
-    if (error === undefined) {
+    if (!error) {
         submit_to_server(name_value, seats_value, phone_value, date_value);
     } else {
         change_message(ERROR_MESSAGES[error]);
