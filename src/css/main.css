@@ -193,7 +193,7 @@ body {
 #innerForm {
     height: 80vh;
     box-sizing: border-box;
-    padding: 15% 10%;
+    padding: 10vh 10%;
     font-family: 'Playfair Display', serif;
 }
 
@@ -216,7 +216,7 @@ body {
 
 #innerForm span {
     font-size: 20px;
-    margin: 2em 0;
+    margin: 3vh 0;
     display: block;
     color: crimson;
 }
@@ -226,7 +226,7 @@ body {
 }
 
 #innerForm .form-group:first-of-type {
-  margin-top: 2em;
+  margin-top: 5vh;
 }
 
 #innerForm .form-group:last-of-type {
