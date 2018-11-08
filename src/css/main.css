@@ -26,11 +26,13 @@ body {
 .jumbotron h1 {
   padding-top: 45vh;
   padding: 45vh 0 .5em 0;
-  text-transform: uppercase;
   letter-spacing: 1em;
+  text-transform: uppercase;
   text-align: center;
   text-indent: 1em;
   opacity: 0;
+  font-family: 'Tangerine';
+  font-weight: 400;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -68,12 +70,13 @@ body {
   .under-season {
     height: 25vh;
     width: 100%;
+    display: block;
   }
 
 }
 .under-season .form {
   visibility: hidden;
-  transition: visibility .15s;
+  transition: visibility 0s;
   transition-delay: 0.15s;
   transition-timing-function: ease-in-out;
 }
