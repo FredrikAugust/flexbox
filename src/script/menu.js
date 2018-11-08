@@ -44,12 +44,19 @@ function expandOnClick() { //the function which is responsible for expanding the
         document.querySelector("#" +this.id).children[0].style.visibility = "visible";
         isClicked = 1;
         //console.log("expanded");
-    } else { //if one div is already in a "click-expanded" state, then no other div should be expanded and it should reset to default
+    } else if (isClicked === 1) { //if one div is already in a "click-expanded" state, then no other div should be expanded and it should reset to default
         resetToDefault();
         isClicked = 0;
         //console.log("default");
     }
 }
+
 for(let i = 0; i < document.querySelectorAll(".under-season").length; i++) {
   document.querySelectorAll(".under-season")[i].children[0].style.borderColor = borderColors[i];
+  document.querySelectorAll(".exit-button")[i].addEventListener("click", function() {
+    isClicked = 0;
+    document.querySelectorAll(".under-season")[i].style.width = "25%";
+    document.querySelectorAll(".under-season")[i].children[0].style.visibility = "hidden";
+    console.log("it almost works");
+  });
 }

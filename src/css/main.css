@@ -99,13 +99,17 @@ body {
 .under-season>.form {
   border: 1em solid rgb(190, 211, 1);
   box-sizing: border-box;
-  overflow: scroll;
+  overflow: hidden;
+  height: 80%;
 }
 .exit-button {
   float: right;
   padding: 1em;
   font-size: 2em;
   font-weight: 800;
+  cursor: pointer;
+}
+.exit-button:hover {
   cursor: pointer;
 }
 .menu-item {
@@ -119,21 +123,31 @@ body {
 .menu-price {
   float: right;
   padding: 1em;
+  padding-bottom: 2em; 
   font-size: 1.5em;
 }
 
 /* WINE MENU */
 .wine-menu {
-  height: 60vh;
-  background-color: white;
+  height: 90%;
+  background-color: grey;
   margin-top: 2em;
+  color: white;
+  border: 5px solid white;
+  box-sizing: border-box;
 }
 .wine-button {
   background-color: grey;
   color: white;
   border: none;
   padding: 1em;
-  margin-left: 25vh;
+  left: 40%;
+  position: absolute;
+  border-radius: 20px 20px 0px 0px;
+}
+.form>.menu-price {
+  position: initial;
+  padding-bottom: 55%;
 }
 /* CONTACT */
 
