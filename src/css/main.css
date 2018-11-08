@@ -36,15 +36,15 @@ body {
 }
 
 .jumbotron h1 {
-  padding-top: 45vh;
-  padding: 45vh 0 .5em 0;
-  letter-spacing: 1em;
+  padding: 45vh 0 0 0;
+  letter-spacing: .3em;
   text-transform: uppercase;
   text-align: center;
-  text-indent: 1em;
+  text-indent: .3em;
   opacity: 0;
-  font-family: 'Tangerine';
-  font-weight: 400;
+  font-family: 'Amatic SC';
+  font-size: 3em;
+  font-weight: 800;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -53,6 +53,9 @@ body {
 }
 
 .jumbotron p {
+  font-family: 'Amatic SC';
+  font-size: 1.5em;
+
   animation-duration: 1s;
   animation-name: slidein-p;
   animation-iteration-count: 1;
