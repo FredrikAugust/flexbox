@@ -77,24 +77,41 @@ body {
   transition: visibility .15s;
   transition-delay: 0.15s;
   transition-timing-function: ease-in-out;
+  border-radius: 30px;
 }
 .under-season div:hover {
   transition-delay: 0s;
 }
 #spring {
-  background-image: url('../img/spring.jpg');
+  background-image: url('../img/spring2.jpg');
+}
+#spring>.form{
+  background-color: rgba(234, 200, 66, 0.9);
+  border-color: rgba(204, 161, 53);
 }
 #summer {
   background-image: url('../img/summer.jpg');
 }
+#summer>.form{
+  background-color: rgba(59, 131, 55, 0.9);
+  border-color: rgba(43, 84, 41);
+}
 #fall {
   background-image: url('../img/fall.jpg');
+}
+#fall>.form{
+  background-color: rgba(193, 133, 107, 0.9);
+  border-color: rgb(166, 104, 89);
 }
 #winter {
   background-image: url('../img/winter.jpg');
 }
+#winter>.form{
+  background-color: rgba(128, 133, 155, 0.9);
+  border-color: rgb(72, 81, 103);
+}
 .under-season>.form {
-  border: 1em solid rgb(190, 211, 1);
+  border: 1em solid;
   box-sizing: border-box;
 }
 .exit-button {
