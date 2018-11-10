@@ -83,7 +83,7 @@ body {
   transition-delay: 0s;
 }
 #spring {
-  background-image: url('../img/spring2.jpg');
+  background-image: url('../img/spring.jpg');
 }
 #spring>.form{
   background-color: rgba(234, 200, 66, 0.9);
