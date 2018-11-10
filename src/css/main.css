@@ -10,8 +10,8 @@ p {
 }
 
 body {
-  font-family: 'Playfair Display', 'Roboto', 'sans-serif';
-  color: grey;
+  font-family: 'Poiret One', 'Roboto', 'sans-serif';
+  color: #353535;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -27,14 +27,14 @@ body {
   background-position: center;
   background-size: cover;
   width: 100%;
-  color: white;
+  color: #dedede;
   text-align: center
 }
 
 .jumbotron h1 {
   padding-top: 45vh;
   padding: 45vh 0 .5em 0;
-  text-transform: uppercase;
+  
   letter-spacing: 1em;
   text-align: center;
   text-indent: 1em;
@@ -136,11 +136,9 @@ body {
     margin-top: 2.5vh;
     margin-left: 5%;
     position: absolute;
-    color: black;
 }
 
 #innerForm h2 {
-    color: black;
     font-weight: 200;
     font-size: 1.8em;
     border-top: 10px solid black;
@@ -152,14 +150,12 @@ body {
     height: 80vh;
     box-sizing: border-box;
     padding: 15% 10%;
-    font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
     box-sizing: border-box;
     border: 0;
     border-bottom: 2px solid #999;
-    font-family: 'Playfair Display', serif;
     outline: none;
     text-transform: capitalize;
     padding: 1em;
@@ -168,7 +164,6 @@ body {
 
 #innerForm input::placeholder {
     color: rgba(0, 0, 0, 0.9);
-    font-family: 'Playfair Display', serif;
     font-size: 1.1em;
 }
 
@@ -198,7 +193,6 @@ body {
   border-top: 3px solid #123123;
   border-bottom: 2px solid #123123;
   cursor: pointer;
-  font-family: 'Playfair Display', serif;
   font-size: 0.5em;
   letter-spacing: 2px;
 }
