@@ -148,7 +148,10 @@ body {
 }
 
 .form {
-    background-color: white;
+    //background-color: rgba(198, 202, 214, 0.9);
+    background-color: rgba(248, 248, 248, 0.9);
+    //background-color: #fff;
+    border-radius: 50px;
     width: 50%;
     height: 95vh;
     margin-top: 2.5vh;
@@ -171,6 +174,7 @@ body {
 }
 
 #innerForm input {
+    background-color: rgba(0, 0, 0, 0);
     box-sizing: border-box;
     border: 0;
     border-bottom: 2px solid #999;
@@ -192,12 +196,16 @@ body {
     color: crimson;
 }
 
+#innerForm .form-group input[type="text"]{
+  font-size: 0.5em;
+}
+
 #innerForm .form-group:not(:last-of-type) {
-  margin-top: .5em;
+  margin-top: 2vh;
 }
 
 #innerForm .form-group:first-of-type {
-  margin-top: 2em;
+  margin-top: 5vh;
 }
 
 #innerForm .form-group:last-of-type {
@@ -211,7 +219,7 @@ body {
   border-top: 3px solid #123123;
   border-bottom: 2px solid #123123;
   cursor: pointer;
-  font-size: 0.5em;
+  font-size: 0.6em;
   letter-spacing: 2px;
 }
 
