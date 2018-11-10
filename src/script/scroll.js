@@ -28,7 +28,7 @@ window.addEventListener('scroll', function scrollHandler (e) {
     window.addEventListener('scroll', scrollHandler);
     previousScrollPosition = document.documentElement.scrollTop;
     document.querySelector('body').style.overflowY = 'scroll';
-  }, 600);
+  }, 1200);
 
   if (document.documentElement.scrollTop > previousScrollPosition) {
     scrollDown();
