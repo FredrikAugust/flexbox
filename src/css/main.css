@@ -37,14 +37,16 @@ body {
   background-position: center;
   background-size: cover;
   width: 100%;
-  color: #eee;
-  padding-left: 8em;
+  color: white;
+  text-align: left
 }
 
 .jumbotron h1 {
-  padding: 40vh 0 0 0;
+  padding: 30vh 0 0 1em;
   letter-spacing: .3em;
   text-transform: uppercase;
+  text-align: left;
+  text-indent: .3em;
   opacity: 0;
   font-family: 'Amatic SC';
   font-size: 4em;
@@ -67,7 +69,24 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 1s;
   opacity: 0;
+  padding-left: 2.75em;
 }
+@media only screen and (max-width: 768px) {
+  .jumbotron {
+    text-align: center;
+  }
+  .jumbotron h1 {
+    font-size: 2em;
+    text-align: center;
+    text-indent: 0;
+    padding: 30vh 0 0 0;
+  }
+  .jumbotron p {
+    text-align: center;
+    padding-left: 0; 
+  }
+}
+
 
 /* SEASONS CONTAINER */
 
@@ -76,6 +95,7 @@ body {
 }
 
 /* SEASON STYLING */
+
 .under-season {
   width: 25%;
   height: 100vh;
@@ -86,13 +106,15 @@ body {
   transition: width .15s;
   transition-timing-function: ease-in-out;
 }
+.under-season:hover {
+  cursor: pointer;
+}
 @media only screen and (max-width: 768px) {
   .under-season {
     height: 25vh;
-    width: 100%;
+    width: 100% !important;
     display: block;
   }
-
   .jumbotron p {
     width: 80vw;
   }
@@ -100,7 +122,21 @@ body {
   .jumbotron {
     padding-left: 2em;
   }
-
+  .under-season .form {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 95%;
+    margin: 1em;
+    height: 95vh !important;
+    z-index: 999;
+  }
+  .exit-button {
+    visibility: hidden;
+  }
+  #reservation .form {
+    width: 100% !important;
+  }
 }
 .under-season .form {
   visibility: hidden;
@@ -137,12 +173,44 @@ body {
   overflow: hidden;
   height: 80%;
 }
+.h2-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+.under-season>.h2-container>h2 {
+  color: white;
+  text-align: center;
+  padding: 1em;
+  white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+  .under-season>.form {
+    overflow-y: scroll;
+  }
+  .wine-button {
+    visibility: hidden;
+  }
+  .under-season>.h2-container>h2 {
+    padding: 4em;
+    padding-top: 10%;
+    background-color: none;
+
+  }
+  .h2-container {
+    width: 100%;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+}
+
 .exit-button {
   float: right;
   padding: 1em;
   font-size: 2em;
   font-weight: 800;
   cursor: pointer;
+  color:#333;
 }
 .exit-button:hover {
   cursor: pointer;
@@ -164,7 +232,9 @@ body {
 .form>.menu-item, .form>.menu-price {
   color: grey;
 }
+
 /* WINE MENU */
+
 .wine-menu {
   height: 90%;
   background-color: grey;
@@ -187,6 +257,7 @@ body {
   position: initial;
   padding-bottom: 55%;
 }
+
 /* CONTACT */
 
 #reservations {
@@ -330,6 +401,12 @@ body {
   color: white;
 }
 
+@media only screen and (max-width: 768px) {
+  #reservations .form {
+    width: 90%;
+  }
+}
+
 /* MAP */
 
 #map {
@@ -342,33 +419,36 @@ body {
   overflow: hidden;
   filter: invert(100%);
 }
+
 /* FOOTER */
 
 footer {
   padding: 2.5em 5%;
   font-size: 1.2em;
   color: white;
-  background-color: black;
+  background-color: #161616;
 }
 
 footer li {
   list-style-type: none;
 }
 
+
 /* HIDE SCROLLBAR */
 ::-webkit-scrollbar {
   width: 0;
 }
 
+
 /* ANIMATIONS */
 @keyframes slidein-h1 {
   from {
-    padding-top: 40vh;
+    padding-top: 25vh;
     opacity: 0;
   }
 
   to {
-    padding-top: 45vh;
+    padding-top: 30vh;
     opacity: 1;
   }
 }
