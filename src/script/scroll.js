@@ -2,6 +2,7 @@
  * This file is responsible for the scrolling logic of the website.
  * When the user scrolls, we will override the scrolling behaviour to fluidly
  * scroll them to the next page.
+ *
  * Written completely by Fredrik August Madsen-Malmo
  */
 
@@ -14,8 +15,6 @@ const anchors = [
   document.querySelector('#reservations'),
   document.querySelector('footer'),
 ];
-
-(() => (window.scrollTo(0, 0)))()
 
 window.addEventListener('scroll', function scrollHandler (e) {
   // We're hiding the overflow so the user can't scroll when the smooth
@@ -58,3 +57,4 @@ const scrollUp = () => {
     anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
+

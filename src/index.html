@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/helpers.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -13,7 +14,8 @@
   <body>
     <header class="jumbotron full-page">
       <h1>Góðr fæða</h1>
-      <img src="img/logo.png" alt="" class="logo">
+      <p>Eksperimentell mat servert av mennesker med en brennende lidenskap for
+      gastronomiske opplevelser inspirert av norsk natur.</p>
     </header>
     <div id="seasons" class="full-page">
       <div id="spring" class="under-season" data-src="">
@@ -88,11 +90,14 @@
     </section>
     <footer>
       <ul>
-        <li><a>928 48 870</a></li>
-        <li><a>mail.fredrikaugust@gmail.com</a></li>
+        <li><i class="fas fa-phone"></i> <a>928 48 870</a></li>
+        <li><i class="fas fa-envelope"></i> <a>mail.fredrikaugust@gmail.com</a></li>
       </ul>
     </footer>
 
+    <script>
+      window.addEventListener('beforeunload', () => anchors[0].scrollIntoView());
+    </script>
     <script src="./script/scroll.js"></script>
     <script src="./script/menu.js"></script>
     <script src="./script/formfeedback.js"></script>
