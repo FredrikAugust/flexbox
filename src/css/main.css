@@ -169,7 +169,7 @@ body {
 @media only screen and (max-width: 768px) {
   .under-season>.h2-container>h2 {
     padding: 4em;
-    padding-top: 3em;
+    padding-top: 10%;
     background-color: none;
 
   }
