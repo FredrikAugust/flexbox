@@ -26,10 +26,6 @@ let message_element,
     phone_input_element,
     date_input_element;
 
-let dialog_element,
-    dialog_text_element,
-    dialog_button_element;
-
 window.addEventListener("load", function () { // This block will run when site is finished loading
     let innerform_element = document.querySelector("#innerForm");
     innerform_element.addEventListener("keyup", innerform_keyup);
@@ -51,11 +47,6 @@ window.addEventListener("load", function () { // This block will run when site i
     input_elements[4].addEventListener("click", validate_form);
 
     message_element = innerform_element.querySelector("#message");
-
-    dialog_element = document.querySelector(".dialog");
-    dialog_text_element = dialog_element.querySelector("p");
-    dialog_button_element = dialog_element.querySelector("input[type=\"button\"]");
-    dialog_button_element.addEventListener("click", hide_form_popup);
 });
 
 function change_message(message) {
@@ -184,10 +175,6 @@ function integer_field_input(event) {
     event.target.value = new_value; // Changes field value to modified value
 }
 
-function hide_form_popup() {
-    dialog_element.style.display = "none";
-}
-
 function phone_field_input(event) {
     let pre_value = event.target.value; // Non-modified value
     let new_value = ""; // Current modified value
@@ -223,16 +210,9 @@ function phone_field_input(event) {
     event.target.value = new_value;
 }
 
-function show_form_popup(name_value, seats_value, phone_value, date_value) {
-    dialog_text_element.innerHTML = `Reservasjonen av bord for ${seats_value} ` + (seats_value == 1 ? "person" : "personer") + ` den ${date_value} for ${name_value} er fullført. Hvis du har spørsmål, ønsker å informere om noe eller å trekke reservasjonen, ring oss gjerne.`;
-
-    dialog_element.style.display = "initial";
-}
-
 function submit_to_server(name, seats, phone, date) {
     /* Mocked as there's no back-end */
-    change_message("");
-    show_form_popup(name, seats, phone, date);
+    change_message("Reservasjonen er vellykket.");
 }
 
 function validate_form() {
@@ -248,7 +228,7 @@ function validate_form() {
     let phone_value = phone_input_element.value;
     if (
         !((phone_value.startsWith("4") || phone_value.startsWith("8") || phone_value.startsWith("9")) && phone_value.length == 10 ||
-        phone_value.length == 11)
+        phone_value == 9)
     ) {
         error = "phone_not_complete";
     }
