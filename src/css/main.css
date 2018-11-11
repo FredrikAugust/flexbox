@@ -277,7 +277,7 @@ body {
 .dialog {
   background-color: rgba(0, 0, 0, 0.54);
   display: none;
-  height: 100vh;
+  height: 100%;
   left: 0;
   position: absolute;
   top: 0;
@@ -407,9 +407,17 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  #reservations .form {
-    width: 90%;
-  }
+    #reservations {
+        min-height: 632px;
+    }
+    #reservations .form {
+        min-height: 600px;
+        width: 90%;
+    }
+    #innerForm h2 {
+        font-weight: 200;
+        font-size: 1.4em;
+    }
 }
 
 /* MAP */
