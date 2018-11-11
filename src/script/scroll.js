@@ -16,7 +16,7 @@ const anchors = [
   document.querySelector('footer'),
 ];
 
-window.addEventListener('scroll', function scrollHandler (e) {
+function scrollHandler (e) {
   // We're hiding the overflow so the user can't scroll when the smooth
   // scrolling is working its magic. We're also hiding it so that the user won't
   // see a scrollbar popping up now and then.
@@ -36,6 +36,18 @@ window.addEventListener('scroll', function scrollHandler (e) {
   }
 
   prevEventTimestamp = e.timeStamp;
+}
+
+let handlerSet = false;
+
+window.addEventListener('scroll', () => {
+  if (window.innerWidth > 768 && !handlerSet) {
+    window.addEventListener('scroll', scrollHandler);
+    handlerSet = true;
+  } else if (window.innerWidth <= 768) {
+    window.removeEventListener('scroll', scrollHandler);
+    handlerSet = false;
+  }
 });
 
 const scrollDown = () => {
