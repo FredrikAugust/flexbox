@@ -99,6 +99,9 @@ body {
   transition: width .15s;
   transition-timing-function: ease-in-out;
 }
+.under-season:hover {
+  cursor: pointer;
+}
 @media only screen and (max-width: 768px) {
   .under-season {
     height: 25vh;
