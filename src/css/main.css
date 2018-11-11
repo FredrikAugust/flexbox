@@ -38,15 +38,15 @@ body {
   background-size: cover;
   width: 100%;
   color: white;
-  text-align: left
+  text-align: left;
+  padding-left: 3em;
 }
 
 .jumbotron h1 {
-  padding: 30vh 0 0 1em;
+  padding-top: 40vh;
   letter-spacing: .3em;
   text-transform: uppercase;
   text-align: left;
-  text-indent: .3em;
   opacity: 0;
   font-family: 'Amatic SC';
   font-size: 4em;
@@ -62,28 +62,30 @@ body {
   width: 40vw;
   font-family: 'Playfair Display';
   font-size: 1.2em;
+  opacity: 0;
 
   animation-duration: 1s;
   animation-name: slidein-p;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: 1s;
-  opacity: 0;
-  padding-left: 2.75em;
 }
 @media only screen and (max-width: 768px) {
   .jumbotron {
     text-align: center;
+    padding-left: 2em;
   }
+
   .jumbotron h1 {
     font-size: 2em;
     text-align: center;
-    text-indent: 0;
     padding: 30vh 0 0 0;
   }
+
   .jumbotron p {
     text-align: center;
     padding-left: 0; 
+    width: 80vw;
   }
 }
 
@@ -230,7 +232,7 @@ body {
   font-size: 1.5em;
 }
 .form>.menu-item, .form>.menu-price {
-  color: grey;
+  color: white;
 }
 
 /* WINE MENU */
@@ -448,7 +450,6 @@ footer li {
   }
 
   to {
-    padding-top: 30vh;
     opacity: 1;
   }
 }
