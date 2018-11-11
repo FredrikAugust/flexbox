@@ -10,8 +10,8 @@ p {
 }
 
 body {
-  font-family: 'Playfair Display', 'Roboto', 'sans-serif';
-  color: grey;
+  font-family: 'Poiret One', 'Roboto', 'sans-serif';
+  color: #353535;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -21,24 +21,22 @@ body {
 /* JUMBOTRON */
 
 .jumbotron {
-  font-size: 2em;
+  font-size: 2.5em;
   background-image: url("./../img/jumbotron.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   width: 100%;
-  color: white;
+  color: #eee;
   text-align: center
 }
 
 .jumbotron h1 {
-  padding-top: 45vh;
-  padding: 45vh 0 .5em 0;
-  text-transform: uppercase;
+  padding-bottom: .5em;
+
   letter-spacing: 1em;
   text-align: center;
   text-indent: 1em;
-  opacity: 0;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -46,13 +44,16 @@ body {
   animation-fill-mode: forwards;
 }
 
-.jumbotron p {
+
+.jumbotron>.logo{
+  height: 20%;
+  
+  opacity: 0;
+  animation-delay: 1.5s;
   animation-duration: 1s;
-  animation-name: slidein-p;
+  animation-name: appear-logo;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 1s;
-  opacity: 0;
 }
 
 /* SEASONS CONTAINER */
@@ -77,6 +78,7 @@ body {
   transition: visibility .15s;
   transition-delay: 0.15s;
   transition-timing-function: ease-in-out;
+  border-radius: 30px;
 }
 .under-season div:hover {
   transition-delay: 0s;
@@ -84,17 +86,33 @@ body {
 #spring {
   background-image: url('../img/spring.jpg');
 }
+#spring>.form{
+  background-color: rgba(234, 200, 66, 0.9);
+  border-color: rgba(204, 161, 53);
+}
 #summer {
   background-image: url('../img/summer.jpg');
+}
+#summer>.form{
+  background-color: rgba(59, 131, 55, 0.9);
+  border-color: rgba(43, 84, 41);
 }
 #fall {
   background-image: url('../img/fall.jpg');
 }
+#fall>.form{
+  background-color: rgba(193, 133, 107, 0.9);
+  border-color: rgb(166, 104, 89);
+}
 #winter {
   background-image: url('../img/winter.jpg');
 }
+#winter>.form{
+  background-color: rgba(128, 133, 155, 0.9);
+  border-color: rgb(72, 81, 103);
+}
 .under-season>.form {
-  border: 1em solid rgb(190, 211, 1);
+  border: 1em solid;
   box-sizing: border-box;
 }
 .exit-button {
@@ -130,17 +148,18 @@ body {
 }
 
 .form {
-    background-color: white;
+    //background-color: rgba(198, 202, 214, 0.9);
+    background-color: rgba(248, 248, 248, 0.9);
+    //background-color: #fff;
+    border-radius: 50px;
     width: 50%;
     height: 95vh;
     margin-top: 2.5vh;
     margin-left: 5%;
     position: absolute;
-    color: black;
 }
 
 #innerForm h2 {
-    color: black;
     font-weight: 200;
     font-size: 1.8em;
     border-top: 10px solid black;
@@ -152,14 +171,13 @@ body {
     height: 80vh;
     box-sizing: border-box;
     padding: 15% 10%;
-    font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
+    background-color: rgba(0, 0, 0, 0);
     box-sizing: border-box;
     border: 0;
     border-bottom: 2px solid #999;
-    font-family: 'Playfair Display', serif;
     outline: none;
     text-transform: capitalize;
     padding: 1em;
@@ -168,7 +186,6 @@ body {
 
 #innerForm input::placeholder {
     color: rgba(0, 0, 0, 0.9);
-    font-family: 'Playfair Display', serif;
     font-size: 1.1em;
 }
 
@@ -179,12 +196,16 @@ body {
     color: crimson;
 }
 
+#innerForm .form-group input[type="text"]{
+  font-size: 0.5em;
+}
+
 #innerForm .form-group:not(:last-of-type) {
-  margin-top: .5em;
+  margin-top: 2vh;
 }
 
 #innerForm .form-group:first-of-type {
-  margin-top: 2em;
+  margin-top: 5vh;
 }
 
 #innerForm .form-group:last-of-type {
@@ -198,8 +219,7 @@ body {
   border-top: 3px solid #123123;
   border-bottom: 2px solid #123123;
   cursor: pointer;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.5em;
+  font-size: 0.6em;
   letter-spacing: 2px;
 }
 
@@ -237,24 +257,21 @@ footer li {
 /* ANIMATIONS */
 @keyframes slidein-h1 {
   from {
-    padding-top: 40vh;
+    padding-top: 30vh;
     opacity: 0;
   }
 
   to {
-    padding-top: 45vh;
+    padding-top: 35vh;
     opacity: 1;
   }
 }
 
-@keyframes slidein-p {
+@keyframes appear-logo{
   from {
-    padding-top: 5vh;
     opacity: 0;
   }
-
-  to {
-    padding-top: 0vh;
+  to{
     opacity: 1;
   }
 }

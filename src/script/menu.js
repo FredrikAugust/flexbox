@@ -9,9 +9,6 @@ let clickWidth = "60%"; //the width of the season that is being clicked
 let siblingsClickWidth = "calc(40%/3)" //the width of the siblings of the season that is being clicked
 let isClicked = 0; //checks if any season is currently clicked
 
-const borderColors = ['#E94B3C', '#F3872F', '#DC4C46', '#485167'];
-
-
 function expandOnHover() { //the function that changes the width of the seasons when one is hovered
     if(isClicked === 0) {
         shrinkAllChildrenOfParent(siblingsHoverWidth);
@@ -49,7 +46,4 @@ function expandOnClick() { //the function which is responsible for expanding the
         isClicked = 0;
         //console.log("default");
     }
-}
-for(let i = 0; i < document.querySelectorAll(".under-season").length; i++) {
-  document.querySelectorAll(".under-season")[i].children[0].style.borderColor = borderColors[i];
 }
