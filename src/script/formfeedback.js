@@ -62,14 +62,19 @@ function change_message(message) {
     message_element.innerHTML = message;
 }
 
+// Reacts to key presses when date field is in focus
 function date_field_keydown(event) {
     let pre_value = event.target.value;
+    // If keypress is backspace then
     if ((event.which || event.keyCode) == 8) {
+        // Run through the string
         for (let i = pre_value.length - 1; i >= 0; i--) {
+            // Delete the number at the end of the string
             if (/[0-9]/.test(pre_value[i])) {
                 event.target.value = pre_value.slice(0, i);
                 event.preventDefault();
                 return;
+            // or delete the whole month word if a letter is found instead of a digit
             } else if (/[a-zæøå]/.test(pre_value[i])) {
                 i--;
                 while (/[a-zæøå]/.test(pre_value[i])) {
@@ -83,6 +88,12 @@ function date_field_keydown(event) {
         }
     }
 }
+// Reacts to value changes in date field. We to have a lot of control over what can be written in the
+// field. Therefore when the value changed no matter what triggered it, we run through the whole string
+// and do a thorough parse, ignoring anything but digits, some letters and certain other special
+// characters. This is by far the most advanced field, because it has to keep track of if a month or day
+// is expected next and we wanted people to be able to paste in dates from "22. feb" to "9 / 9" and all
+// would work. We achieved this.
 function date_field_input(event) {
     let pre_value = event.target.value.replace(/\s/g, '').toLowerCase();
     let month, day = 0;
@@ -91,10 +102,14 @@ function date_field_input(event) {
     1: Waiting for month
     */
 
+    // Run through the string
     for (let i = 0; i < pre_value.length; i++) {
+        // If field is expecting a day value to be typed in
         if (state == 0) {
+            // If this particular character is a digit, other wise: ignore
             if (/[0-9]/.test(pre_value[i])) {
                 day = day * 10 + parseInt(pre_value[i]);
+                // Check if digit can be added as day value or if it is too large.
                 if (day > 31) {
                     day = Math.floor(day / 10);
                     month = parseInt(pre_value[i]);
@@ -103,6 +118,7 @@ function date_field_input(event) {
                     month = 0;
                     state = 1;
                 }
+            // Checks for special characters that change the expected value type
             } else if (day != 0 && pre_value[i] == ".") {
                 month = "";
                 state = 1
@@ -112,6 +128,7 @@ function date_field_input(event) {
             }
             continue;
         }
+        // If field is expecting a month value to be typed in
         if (state > 0) {
             if (
                 /[1-9]/.test(pre_value[i]) ||
@@ -127,6 +144,8 @@ function date_field_input(event) {
                     month = Math.floor(month / 10);
                 }
             }
+            // Checks if a certain letter fits with any of the expected letters that would come next
+            // when the characters previous to this is known.
             if (/[a-zæøå]/.test(pre_value[i])) {
                 if (month == 0) {
                     month = "";
