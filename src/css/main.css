@@ -127,6 +127,57 @@ body {
     background-size: cover;
     background-position: center;
     font-size: 2em;
+    position: relative;
+}
+
+.dialog {
+    background-color: rgba(0, 0, 0, 0.54);
+    display: none;
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.dialog>.card {
+    background-color: white;
+    font-family: 'Playfair Display', serif;
+    left: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+}
+.dialog span {
+    color: black;
+}
+.dialog p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.6em;
+    color: black;
+}
+.dialog input[type="button"] {
+    background: white;
+    border-top: 3px solid #123123;
+    border-right: 0;
+    border-bottom: 2px solid #123123;
+    border-left: 0;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.5em;
+    letter-spacing: 2px;
+    outline: none;
+    width: 100px;
+    padding: 0.5em;
+    user-select: none;
+}
+.dialog input[type="button"]:hover {
+    background-color: black;
+    border-color: white;
+    color: white;
 }
 
 .form {
