@@ -210,6 +210,8 @@ function hide_form_popup() {
 function phone_field_input(event) {
     let pre_value = event.target.value; // Non-modified value
     let new_value = ""; // Current modified value
+    // Running through the new string, which might be longer than the last string plus one character.
+    // Maybe the user used copy and paste.
     for (let i = 0; i < pre_value.length; i++) {
         if (
             /[2-9]/.test(pre_value[i]) ||
@@ -220,7 +222,8 @@ function phone_field_input(event) {
                 break;
             }
         }
-    }
+    } 
+    // Adding spaces in phone numbers according to specifications in Norwegian numbers
     if (new_value[0] == "4" || new_value[0] == "8" || new_value[0] == "9") {
         if (new_value.length > 5) {
             new_value = [new_value.slice(0, 5), " ", new_value.slice(5)].join("");

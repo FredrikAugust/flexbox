@@ -6,11 +6,11 @@ for (let i = 0; i < document.querySelector("#seasons").children.length; i++) {
         if(isScrolled === 0) {
             document.querySelectorAll(".wine-button")[i].parentElement.scrollTop += window.innerHeight/100*80;
             isScrolled = 1
-            document.querySelectorAll(".wine-button")[i].innerHTML = "show menu";
+            document.querySelectorAll(".wine-button")[i].innerHTML = "vis meny";
         } else if (isScrolled === 1) {
             document.querySelectorAll(".wine-button")[i].parentElement.scrollTop -= window.innerHeight/100*80;
             isScrolled = 0;
-            document.querySelectorAll(".wine-button")[i].innerHTML = "show wine";
+            document.querySelectorAll(".wine-button")[i].innerHTML = "vis vinalternativer";
         }
     })
     document.querySelectorAll(".wine-menu")[i].style.backgroundColor = borderColors[i];
