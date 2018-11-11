@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poiret+One|Tangerine" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/helpers.css">
     <link rel="stylesheet" href="./css/main.css">
-    <title>God Mat</title>
+    <title>Góðr fæða</title>
   </head>
   <body>
     <header class="jumbotron full-page">
@@ -18,48 +18,80 @@
       gastronomiske opplevelser inspirert av norsk natur.</p>
     </header>
     <div id="seasons" class="full-page">
-      <div id="spring" class="lazy under-season">
+      <div id="spring" class="lazy under-season" title="spring">
         <div class="form">
             <p class="exit-button">X</p>
             <h2 class="menu-title">Vår</h2>
             <h3 class="menu-item">Fritert kylling</h3>
             <h3 class="menu-item">Vår-salat</h3>
             <h3 class="menu-item">Appelsiner</h3>
-            <h3 class="menu-item">Sjokolade</h3>
             <h4 class="menu-price">4000kr</h4>
+            <h3 class="menu-item">Sjokolade</h3>
+            <button id="spring-button" onclick="event.stopPropagation()" class="wine-button" type="button" >show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Vår Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">+2300kr</h4>
+            </div>
         </div>
       </div>
-      <div id="summer" class="lazy under-season">
+      <div id="summer" class="lazy under-season" title="summer">
           <div class="form">
             <p class="exit-button">X</p>
             <h2 class="menu-title">Sommer</h2>
             <h3 class="menu-item">Kald, kokt makrell</h3>
             <h3 class="menu-item">Fruktsalat</h3>
             <h3 class="menu-item">Epler</h3>
-            <h3 class="menu-item">Bringebærmousse</h3>
             <h4 class="menu-price">6000kr</h4>
+            <h3 class="menu-item">Bringebær</h3>
+            <button id="summer-button" onclick="event.stopPropagation()" class="wine-button" type="button" >show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Sommer Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">+2300kr</h4>
+            </div>
           </div>
       </div>
-      <div id="fall" class="lazy under-season">
-          <div class="form">
-            <p class="exit-button">X</p>
-            <h2 class="menu-title">Høst</h2>
-            <h3 class="menu-item">Lapskaus</h3>
-            <h3 class="menu-item">Fårikål</h3>
-            <h3 class="menu-item">Potetflak</h3>
-            <h3 class="menu-item">Multekrem</h3>
-            <h4 class="menu-price">5500kr</h4>
+      <div id="fall" class="lazy under-season" title ="fall">
+          <div class="form" >
+              <p class="exit-button">X</p>
+              <h2 class="menu-title">Høst</h2>
+              <h3 class="menu-item">Lapskaus</h3>
+              <h3 class="menu-item">Fårikål</h3>
+              <h3 class="menu-item">Potetflak</h3>
+              <h4 class="menu-price">5500kr</h4>
+              <h3 class="menu-item">Multekrem</h3>
+              <button id="fall-button" onclick="event.stopPropagation()" class="wine-button" type="button">show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Høst Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">+2300kr</h4>
+            </div>
           </div>
       </div>
-      <div id="winter" class="lazy under-season">
+      <div id="winter" class="under-season" title="winter">
           <div class="form">
             <p class="exit-button">X</p>
             <h2 class="menu-title">Vinter</h2>
             <h3 class="menu-item">Ribbe</h3>
             <h3 class="menu-item">Hummer</h3>
             <h3 class="menu-item">Sjokoladesouffle</h3>
-            <h3 class="menu-item">Krokanis</h3>
             <h4 class="menu-price">4800kr</h4>
+            <h3 class="menu-item">Krokanis</h3>
+            <button id="winter-button" onclick="event.stopPropagation()" class="wine-button" type="button">show wine</button>
+            <div class="wine-menu">
+              <h2 class="menu-title">Vinter Vin</h2>
+              <h3 class="menu-item">Vin1</h3>
+              <h3 class="menu-item">Vin2</h3>
+              <h3 class="menu-item">Vin3</h3>
+              <h4 class="menu-price">+2300kr</h4>
+            </div>
           </div>
       </div>
     </div>
@@ -94,19 +126,30 @@
       </div>
     </div>
     <section id="map">
+        <div class="mapouter">
+          <div class="gmap_canvas">
+            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=bangtj%C3%B8nna&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe>
+          </div>
+
+        </div>
     </section>
     <footer>
       <ul>
         <li><i class="fas fa-phone"></i> <a>928 48 870</a></li>
         <li><i class="fas fa-envelope"></i> <a>mail.fredrikaugust@gmail.com</a></li>
+        <li><i class="fas fa-map-marked"></i> <a>Bangtjønna, 7025, Trondheim, Norway</a></li>
       </ul>
     </footer>
 
     <script>
+      // Scrolls to the top on page load to prevent scroll highjacking from
+      // thinking you're somewhere else.
       window.addEventListener('beforeunload', () => anchors[0].scrollIntoView());
     </script>
     <script src="./script/scroll.js"></script>
     <script src="./script/menu.js"></script>
+    <script src="./script/wine.js"></script>
     <script src="./script/formfeedback.js"></script>
     <script src="./script/lazy.js"></script>
   </body>

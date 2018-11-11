@@ -9,6 +9,10 @@ p {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Playfair Display', 'Roboto', 'sans-serif';
   color: #353535;
@@ -32,11 +36,15 @@ body {
 }
 
 .jumbotron h1 {
-  font-size: 3em;
+  padding: 45vh 0 0 0;
+  letter-spacing: .3em;
   text-transform: uppercase;
-  letter-spacing: .4em;
+  text-align: center;
+  text-indent: .3em;
   opacity: 0;
-  margin-bottom: .3em;
+  font-family: 'Amatic SC';
+  font-size: 3em;
+  font-weight: 800;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -46,6 +54,8 @@ body {
 
 .jumbotron p {
   width: 40vw;
+  font-family: 'Amatic SC';
+  font-size: 1.5em;
 
   animation-duration: 1s;
   animation-name: slidein-p;
@@ -72,11 +82,23 @@ body {
   transition: width .15s;
   transition-timing-function: ease-in-out;
 }
-.under-season div {
+@media only screen and (max-width: 768px) {
+  .under-season {
+    height: 25vh;
+    width: 100%;
+    display: block;
+  }
+
+}
+.under-season .form {
   visibility: hidden;
-  transition: visibility .15s;
+  transition: visibility 0s;
   transition-delay: 0.15s;
   transition-timing-function: ease-in-out;
+}
+
+.wine-button {
+  pointer-events: initial;
 }
 .under-season div:hover {
   transition-delay: 0s;
@@ -100,12 +122,17 @@ body {
 .under-season>.form {
   border: 1em solid;
   box-sizing: border-box;
+  overflow: hidden;
+  height: 80%;
 }
 .exit-button {
   float: right;
   padding: 1em;
   font-size: 2em;
   font-weight: 800;
+  cursor: pointer;
+}
+.exit-button:hover {
   cursor: pointer;
 }
 .menu-item {
@@ -119,9 +146,35 @@ body {
 .menu-price {
   float: right;
   padding: 1em;
+  padding-bottom: 2em; 
   font-size: 1.5em;
 }
-
+.form>.menu-item, .form>.menu-price {
+  color: grey;
+}
+/* WINE MENU */
+.wine-menu {
+  height: 90%;
+  background-color: grey;
+  margin-top: 2em;
+  color: white;
+  border: 5px solid white;
+  box-sizing: border-box;
+}
+.wine-button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 1em;
+  left: 40%;
+  position: absolute;
+  border-radius: 20px 20px 0px 0px;
+  outline: none;
+}
+.form>.menu-price {
+  position: initial;
+  padding-bottom: 55%;
+}
 /* CONTACT */
 
 #reservations {
@@ -204,7 +257,8 @@ body {
 #innerForm {
     height: 80vh;
     box-sizing: border-box;
-    padding: 15% 10%;
+    padding: 10vh 10%;
+    font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
@@ -226,7 +280,7 @@ body {
 
 #innerForm span {
     font-size: 20px;
-    margin: 2em 0;
+    margin: 3vh 0;
     display: block;
     color: crimson;
 }
@@ -266,10 +320,15 @@ body {
 /* MAP */
 
 #map {
-  height: 30vh;
+  height: 50vh;
   background-color: crimson;
 }
-
+.mapouter, .gmap_canvas, #gmap_canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  filter: invert(100%);
+}
 /* FOOTER */
 
 footer {
@@ -312,3 +371,5 @@ footer li {
     opacity: 1;
   }
 }
+
+
