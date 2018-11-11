@@ -228,7 +228,7 @@ function validate_form() {
     let phone_value = phone_input_element.value;
     if (
         !((phone_value.startsWith("4") || phone_value.startsWith("8") || phone_value.startsWith("9")) && phone_value.length == 10 ||
-        phone_value == 9)
+        phone_value.length == 9)
     ) {
         error = "phone_not_complete";
     }
