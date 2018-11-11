@@ -1,7 +1,8 @@
 let isScrolled = 0;
 
 for (let i = 0; i < document.querySelector("#seasons").children.length; i++) {
-    document.querySelectorAll(".wine-button")[i].addEventListener("click", function(){
+    document.querySelectorAll(".wine-button")[i].addEventListener("click", function(e){
+        e.stopPropagation();
         if(isScrolled === 0) {
             document.querySelectorAll(".wine-button")[i].parentElement.scrollTop += window.innerHeight/100*80;
             isScrolled = 1

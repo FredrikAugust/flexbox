@@ -51,6 +51,7 @@ body {
   font-family: 'Amatic SC';
   font-size: 4em;
   font-weight: 800;
+  text-shadow: 2px 2px 2px black;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -63,6 +64,7 @@ body {
   font-family: 'Playfair Display';
   font-size: 1.2em;
   opacity: 0;
+  text-shadow: 2px 2px 2px black;
 
   animation-duration: 1s;
   animation-name: slidein-p;
