@@ -11,7 +11,7 @@ p {
 
 body {
   font-family: 'Playfair Display', 'Roboto', 'sans-serif';
-  color: grey;
+  color: #353535;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -21,24 +21,22 @@ body {
 /* JUMBOTRON */
 
 .jumbotron {
-  font-size: 2em;
+  font-size: 1.5em;
   background-image: url("./../img/jumbotron.jpg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   width: 100%;
-  color: white;
-  text-align: center
+  color: #eee;
+  padding-left: 8em;
 }
 
 .jumbotron h1 {
-  padding-top: 45vh;
-  padding: 45vh 0 .5em 0;
+  font-size: 3em;
   text-transform: uppercase;
-  letter-spacing: 1em;
-  text-align: center;
-  text-indent: 1em;
+  letter-spacing: .4em;
   opacity: 0;
+  margin-bottom: .3em;
 
   animation-duration: 2s;
   animation-name: slidein-h1;
@@ -47,6 +45,8 @@ body {
 }
 
 .jumbotron p {
+  width: 40vw;
+
   animation-duration: 1s;
   animation-name: slidein-p;
   animation-iteration-count: 1;
@@ -81,20 +81,24 @@ body {
 .under-season div:hover {
   transition-delay: 0s;
 }
-#spring {
-  background-image: url('../img/spring.jpg');
+#spring>.form{
+  background-color: rgba(234, 200, 66, 0.9);
+  border-color: rgba(204, 161, 53);
 }
-#summer {
-  background-image: url('../img/summer.jpg');
+#summer>.form{
+  background-color: rgba(59, 131, 55, 0.9);
+  border-color: rgba(43, 84, 41);
 }
-#fall {
-  background-image: url('../img/fall.jpg');
+#fall>.form{
+  background-color: rgba(193, 133, 107, 0.9);
+  border-color: rgb(166, 104, 89);
 }
-#winter {
-  background-image: url('../img/winter.jpg');
+#winter>.form{
+  background-color: rgba(128, 133, 155, 0.9);
+  border-color: rgb(72, 81, 103);
 }
 .under-season>.form {
-  border: 1em solid rgb(190, 211, 1);
+  border: 1em solid;
   box-sizing: border-box;
 }
 .exit-button {
@@ -181,17 +185,15 @@ body {
 }
 
 .form {
-    background-color: white;
+    background-color: rgba(248, 248, 248, 0.9);
     width: 50%;
     height: 95vh;
     margin-top: 2.5vh;
     margin-left: 5%;
     position: absolute;
-    color: black;
 }
 
 #innerForm h2 {
-    color: black;
     font-weight: 200;
     font-size: 1.8em;
     border-top: 10px solid black;
@@ -203,14 +205,13 @@ body {
     height: 80vh;
     box-sizing: border-box;
     padding: 15% 10%;
-    font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
+    background-color: rgba(0, 0, 0, 0);
     box-sizing: border-box;
     border: 0;
     border-bottom: 2px solid #999;
-    font-family: 'Playfair Display', serif;
     outline: none;
     text-transform: capitalize;
     padding: 1em;
@@ -225,17 +226,21 @@ body {
 
 #innerForm span {
     font-size: 20px;
-    margin: 1.2em 0;
+    margin: 2em 0;
     display: block;
     color: crimson;
 }
 
+#innerForm .form-group input[type="text"]{
+  font-size: 0.5em;
+}
+
 #innerForm .form-group:not(:last-of-type) {
-  margin-top: .5em;
+  margin-top: 2vh;
 }
 
 #innerForm .form-group:first-of-type {
-  margin-top: 2em;
+  margin-top: 5vh;
 }
 
 #innerForm .form-group:last-of-type {
@@ -245,12 +250,10 @@ body {
 }
 
 #innerForm .form-group:last-of-type input[type="button"] {
-  background: white;
   border-top: 3px solid #123123;
   border-bottom: 2px solid #123123;
   cursor: pointer;
-  font-family: 'Playfair Display', serif;
-  font-size: 0.5em;
+  font-size: 0.6em;
   letter-spacing: 2px;
 }
 

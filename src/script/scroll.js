@@ -2,6 +2,7 @@
  * This file is responsible for the scrolling logic of the website.
  * When the user scrolls, we will override the scrolling behaviour to fluidly
  * scroll them to the next page.
+ *
  * Written completely by Fredrik August Madsen-Malmo
  */
 
@@ -15,8 +16,6 @@ const anchors = [
   document.querySelector('footer'),
 ];
 
-(() => (window.scrollTo(0, 0)))()
-
 window.addEventListener('scroll', function scrollHandler (e) {
   // We're hiding the overflow so the user can't scroll when the smooth
   // scrolling is working its magic. We're also hiding it so that the user won't
@@ -28,7 +27,7 @@ window.addEventListener('scroll', function scrollHandler (e) {
     window.addEventListener('scroll', scrollHandler);
     previousScrollPosition = document.documentElement.scrollTop;
     document.querySelector('body').style.overflowY = 'scroll';
-  }, 600);
+  }, 1200);
 
   if (document.documentElement.scrollTop > previousScrollPosition) {
     scrollDown();
@@ -58,3 +57,4 @@ const scrollUp = () => {
     anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
+
