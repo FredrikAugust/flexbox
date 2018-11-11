@@ -1,3 +1,9 @@
+/* Helpers */
+.full-page {
+  height: 100vh;
+}
+/* END Helpers */
+
 h1,
 h2,
 h3,
@@ -36,14 +42,12 @@ body {
 }
 
 .jumbotron h1 {
-  padding: 45vh 0 0 0;
+  padding: 40vh 0 0 0;
   letter-spacing: .3em;
   text-transform: uppercase;
-  text-align: center;
-  text-indent: .3em;
   opacity: 0;
   font-family: 'Amatic SC';
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 800;
 
   animation-duration: 2s;
@@ -54,8 +58,8 @@ body {
 
 .jumbotron p {
   width: 40vw;
-  font-family: 'Amatic SC';
-  font-size: 1.5em;
+  font-family: 'Playfair Display';
+  font-size: 1.2em;
 
   animation-duration: 1s;
   animation-name: slidein-p;
@@ -87,6 +91,14 @@ body {
     height: 25vh;
     width: 100%;
     display: block;
+  }
+
+  .jumbotron p {
+    width: 80vw;
+  }
+
+  .jumbotron {
+    padding-left: 2em;
   }
 
 }
@@ -178,111 +190,111 @@ body {
 /* CONTACT */
 
 #reservations {
-    width: 100%;
-    background-attachment: fixed;
-    background-image: url("./../img/jumbotron.jpg");
-    background-size: cover;
-    background-position: center;
-    font-size: 2em;
-    position: relative;
+  width: 100%;
+  background-attachment: fixed;
+  background-image: url("./../img/jumbotron.jpg");
+  background-size: cover;
+  background-position: center;
+  font-size: 2em;
+  position: relative;
 }
 
 .dialog {
-    background-color: rgba(0, 0, 0, 0.54);
-    display: none;
-    height: 100vh;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100vw;
+  background-color: rgba(0, 0, 0, 0.54);
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
 }
 
 .dialog>.card {
-    background-color: white;
-    font-family: 'Playfair Display', serif;
-    left: 50%;
-    margin: 0 auto;
-    padding: 20px;
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
+  background-color: white;
+  font-family: 'Playfair Display', serif;
+  left: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  position: absolute;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
 }
 .dialog span {
-    color: black;
+  color: black;
 }
 .dialog p {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    font-size: 0.6em;
-    color: black;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 0.6em;
+  color: black;
 }
 .dialog input[type="button"] {
-    background: white;
-    border-top: 3px solid #123123;
-    border-right: 0;
-    border-bottom: 2px solid #123123;
-    border-left: 0;
-    cursor: pointer;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.5em;
-    letter-spacing: 2px;
-    outline: none;
-    width: 100px;
-    padding: 0.5em;
-    user-select: none;
+  background: white;
+  border-top: 3px solid #123123;
+  border-right: 0;
+  border-bottom: 2px solid #123123;
+  border-left: 0;
+  cursor: pointer;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.5em;
+  letter-spacing: 2px;
+  outline: none;
+  width: 100px;
+  padding: 0.5em;
 }
+
 .dialog input[type="button"]:hover {
-    background-color: black;
-    border-color: white;
-    color: white;
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 
 .form {
-    background-color: rgba(248, 248, 248, 0.9);
-    width: 50%;
-    height: 95vh;
-    margin-top: 2.5vh;
-    margin-left: 5%;
-    position: absolute;
+  background-color: rgba(248, 248, 248, 0.9);
+  width: 50%;
+  height: 95vh;
+  margin-top: 2.5vh;
+  margin-left: 5%;
+  position: absolute;
 }
 
 #innerForm h2 {
-    font-weight: 200;
-    font-size: 1.8em;
-    border-top: 10px solid black;
-    border-bottom: 2px solid black;
-    padding: .2em 0 .3em 0;
+  font-weight: 200;
+  font-size: 1.8em;
+  border-top: 10px solid black;
+  border-bottom: 2px solid black;
+  padding: .2em 0 .3em 0;
 }
 
 #innerForm {
-    height: 80vh;
-    box-sizing: border-box;
-    padding: 10vh 10%;
-    font-family: 'Playfair Display', serif;
+  height: 80vh;
+  box-sizing: border-box;
+  padding: 10vh 10%;
+  font-family: 'Playfair Display', serif;
 }
 
 #innerForm input {
-    background-color: rgba(0, 0, 0, 0);
-    box-sizing: border-box;
-    border: 0;
-    border-bottom: 2px solid #999;
-    outline: none;
-    text-transform: capitalize;
-    padding: 1em;
-    width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 2px solid #999;
+  outline: none;
+  text-transform: capitalize;
+  padding: 1em;
+  width: 100%;
 }
 
 #innerForm input::placeholder {
-    color: rgba(0, 0, 0, 0.9);
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.9);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
 }
 
 #innerForm span {
-    font-size: 20px;
-    margin: 3vh 0;
-    display: block;
-    color: crimson;
+  font-size: 20px;
+  margin: 3vh 0;
+  display: block;
+  color: crimson;
 }
 
 #innerForm .form-group input[type="text"]{
@@ -309,6 +321,7 @@ body {
   cursor: pointer;
   font-size: 0.6em;
   letter-spacing: 2px;
+  font-family: 'Playfair Display', serif;
 }
 
 #innerForm .form-group:last-of-type input[type="button"]:hover {
@@ -344,7 +357,7 @@ footer li {
 
 /* HIDE SCROLLBAR */
 ::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
 /* ANIMATIONS */
@@ -371,5 +384,4 @@ footer li {
     opacity: 1;
   }
 }
-
 
