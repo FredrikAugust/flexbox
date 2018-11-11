@@ -3,7 +3,7 @@
  * When the user scrolls, we will override the scrolling behaviour to fluidly
  * scroll them to the next page.
  *
- * Written completely by Fredrik August Madsen-Malmo
+ * 
  */
 
 let previousScrollPosition = 0;
@@ -51,20 +51,20 @@ window.addEventListener('scroll', () => {
 });
 
 const scrollDown = () => {
-  console.log("Scrolling down detected");
+  //console.log("Scrolling down detected");
 
   if (position != anchors.length - 1) {
-    console.log(`Pos: ${position}->${position+1}`)
+    //console.log(`Pos: ${position}->${position+1}`)
     position++;
     anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
 
 const scrollUp = () => {
-  console.log("Scrolling up detected");
+  //console.log("Scrolling up detected");
 
   if (position != 0) {
-    console.log(`Pos: ${position}->${position-1}`)
+    //console.log(`Pos: ${position}->${position-1}`)
     position--;
     anchors[position].scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
