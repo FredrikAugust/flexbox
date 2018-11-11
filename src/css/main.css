@@ -32,14 +32,14 @@ body {
   background-size: cover;
   width: 100%;
   color: white;
-  text-align: center
+  text-align: left
 }
 
 .jumbotron h1 {
-  padding: 45vh 0 0 0;
+  padding: 30vh 0 0 1em;
   letter-spacing: .3em;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   text-indent: .3em;
   opacity: 0;
   font-family: 'Amatic SC';
@@ -62,6 +62,7 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 1s;
   opacity: 0;
+  padding-left: 2.75em;
 }
 
 /* SEASONS CONTAINER */
@@ -71,6 +72,7 @@ body {
 }
 
 /* SEASON STYLING */
+
 .under-season {
   width: 25%;
   height: 100vh;
@@ -147,7 +149,9 @@ body {
 .form>.menu-item, .form>.menu-price {
   color: grey;
 }
+
 /* WINE MENU */
+
 .wine-menu {
   height: 90%;
   background-color: grey;
@@ -170,6 +174,7 @@ body {
   position: initial;
   padding-bottom: 55%;
 }
+
 /* CONTACT */
 
 #reservations {
@@ -273,6 +278,7 @@ body {
   overflow: hidden;
   filter: invert(100%);
 }
+
 /* FOOTER */
 
 footer {
@@ -286,20 +292,22 @@ footer li {
   list-style-type: none;
 }
 
+
 /* HIDE SCROLLBAR */
 ::-webkit-scrollbar {
     width: 0;
 }
 
+
 /* ANIMATIONS */
 @keyframes slidein-h1 {
   from {
-    padding-top: 40vh;
+    padding-top: 25vh;
     opacity: 0;
   }
 
   to {
-    padding-top: 45vh;
+    padding-top: 30vh;
     opacity: 1;
   }
 }
