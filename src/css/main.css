@@ -81,29 +81,17 @@ body {
 .under-season div:hover {
   transition-delay: 0s;
 }
-#spring {
-  background-image: url('../img/spring.jpg');
-}
 #spring>.form{
   background-color: rgba(234, 200, 66, 0.9);
   border-color: rgba(204, 161, 53);
-}
-#summer {
-  background-image: url('../img/summer.jpg');
 }
 #summer>.form{
   background-color: rgba(59, 131, 55, 0.9);
   border-color: rgba(43, 84, 41);
 }
-#fall {
-  background-image: url('../img/fall.jpg');
-}
 #fall>.form{
   background-color: rgba(193, 133, 107, 0.9);
   border-color: rgb(166, 104, 89);
-}
-#winter {
-  background-image: url('../img/winter.jpg');
 }
 #winter>.form{
   background-color: rgba(128, 133, 155, 0.9);
