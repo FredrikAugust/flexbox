@@ -1,6 +1,6 @@
 /*
  * This script is the one responsible for the interactivity of the season menus.
- * Written by Erik Mjaaland Skår
+ * 
  */
 let defaultWidth = "25%"; //the width of the seasons when the page is loaded
 let hoverWidth = "30%"; //the width of the season that is currently hovered
@@ -55,7 +55,7 @@ for(let i = 0; i < document.querySelectorAll(".under-season").length; i++) {
   document.querySelectorAll(".exit-button")[i].addEventListener("click", function(e) {
     e.stopPropagation();
     isClicked = 0;
-    console.log(i)
+    //console.log(i)
     document.querySelectorAll(".under-season")[i].style.width = "25%";
     document.querySelectorAll(".under-season")[i].children[1].style.visibility = "hidden";
     resetToDefault();
