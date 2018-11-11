@@ -1,6 +1,6 @@
 /*
  * This script is the one responsible for the interactivity of the season menus.
- * Written completely by Erik Mjaaland Skår
+ * Written by Erik Mjaaland Skår
  */
 let defaultWidth = "25%"; //the width of the seasons when the page is loaded
 let hoverWidth = "30%"; //the width of the season that is currently hovered
@@ -9,7 +9,7 @@ let clickWidth = "60%"; //the width of the season that is being clicked
 let siblingsClickWidth = "calc(40%/3)" //the width of the siblings of the season that is being clicked
 let isClicked = 0; //checks if any season is currently clicked
 
-const borderColors = ['#E94B3C', '#F3872F', '#a9511e', '#485167'];
+const borderColors = ['#E94B3C', '#28ef47', '#a9511e', '#485167'];
 
 
 function expandOnHover() { //the function that changes the width of the seasons when one is hovered

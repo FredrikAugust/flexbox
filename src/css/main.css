@@ -51,11 +51,7 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-@media only screen and (max-width: 768px) {
-  .jumbotron h1 {
-    font-size: 2em;
-  }
-}
+
 .jumbotron p {
   font-family: 'Amatic SC';
   font-size: 1.5em;
@@ -68,6 +64,22 @@ body {
   opacity: 0;
   padding-left: 2.75em;
 }
+@media only screen and (max-width: 768px) {
+  .jumbotron {
+    text-align: center;
+  }
+  .jumbotron h1 {
+    font-size: 2em;
+    text-align: center;
+    text-indent: 0;
+    padding: 30vh 0 0 0;
+  }
+  .jumbotron p {
+    text-align: center;
+    padding-left: 0; 
+  }
+}
+
 
 /* SEASONS CONTAINER */
 
@@ -95,11 +107,12 @@ body {
   }
   .under-season .form {
     position: absolute;
-    top: screen;
+    top: 100vh;
     left: 0;
     width: 95%;
     margin: 1em;
     height: 95vh !important;
+    z-index: 999;
   }
   .exit-button {
     visibility: hidden;
