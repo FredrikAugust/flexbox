@@ -254,7 +254,7 @@ function validate_form() {
     }
     let valid_date = false;
     let date_value = date_input_element.value;
-    for (let i = 1; i < 12; i++) {
+    for (let i = 1; i <= 12; i++) {
         if (date_value.includes(MONTHS[i].name)) {
             valid_date = true;
             break;
