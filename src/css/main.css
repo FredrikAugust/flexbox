@@ -51,7 +51,11 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-
+@media only screen and (max-width: 768px) {
+  .jumbotron h1 {
+    font-size: 2em;
+  }
+}
 .jumbotron p {
   font-family: 'Amatic SC';
   font-size: 1.5em;
@@ -86,10 +90,23 @@ body {
 @media only screen and (max-width: 768px) {
   .under-season {
     height: 25vh;
-    width: 100%;
+    width: 100% !important;
     display: block;
   }
-
+  .under-season .form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin: 1em;
+    height: 95vh !important;
+  }
+  .exit-button {
+    visibility: hidden;
+  }
+  #reservation .form {
+    width: 100% !important;
+  }
 }
 .under-season .form {
   visibility: hidden;
@@ -128,6 +145,7 @@ body {
   font-size: 2em;
   font-weight: 800;
   cursor: pointer;
+  color:#333;
 }
 .exit-button:hover {
   cursor: pointer;
@@ -266,6 +284,12 @@ body {
   color: white;
 }
 
+@media only screen and (max-width: 768px) {
+  #reservations .form {
+    width: 90%;
+  }
+}
+
 /* MAP */
 
 #map {
@@ -285,7 +309,7 @@ footer {
   padding: 2.5em 5%;
   font-size: 1.2em;
   color: white;
-  background-color: black;
+  background-color: #161616;
 }
 
 footer li {
