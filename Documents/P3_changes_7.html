@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <title>Project changes P3 - Group 7</title>
+    <link rel="stylesheet" href="./document_style.css">
+</head>
+<body>
+	<header>
+      <h1>P3 project changes</h1>
+      <hr>
+      <h4>Authors</h4>
+      <p>
+        Fredrik August Madsen-Malmo, Erik Skår, Andreas Winther Moen, Leonard Nguyen Schøyen
+      </p>
+      <h4>Date</h4>
+      <p>
+        11/11-2018
+      </p>
+    </header>
+    <article>
+    	<section>
+    		<p>
+    			In general, the end result was fairly similar to the intended website specified in P2. We ran into a few problems, particularly related to some of the Javascript features. Details are specified below and in P4. 
+    		</p>
+    		<h2>Changes to front page</h2>
+			<p>
+				The original plan was to have a jumbotron video, replaced by a still image on mobile platforms. We attempted to record a video of the forest which would then be sped up, but due to lack of good enough equipment, in particular a tripod, the video didn't turn out very well. The video was both shaky and the brightness varied too much throughout the video. We tried to edit it slightly, but none of us had past experience with video production. Also, since this is not a required skill for the project, we chose to use a still image on all platforms instead. 
+			</p>
+			<h2>Changes to scrolling</h2>
+			<p>
+				As specified in P4, hijack-scrolling turned out to be a bit more difficult than anticipated. We managed to complete the feature, but it didn't work that well on mobile, so we made mobile devices scroll like standard. We also had to remove the visual scroll indicator presented in P2. More information about this is provided in P4.
+			</p>
+			<h2>Changes to season menus</h2>
+			<p>
+				First we set the color of the season menu panels to be the average of the background images. This turned out to be a bit difficult ro read, and generally didn't look well with the background. Instead we set the panels to be a more distinctive color which also made it easy to read. We also added a border with a different color to set it better apart from the background.
+			</p>
+			<h2>Changes to font</h2>
+			<p>
+				As specified in P2, the font was not fully determined. The font from P2, Poiret One, was very modernistic. However, as we started developing the website we realized we needed something more reminiscent of Norwegian nature, and changed it to Playfair Display. The name of the restaurant uses the font Amatic SC instead. We gave the name a special font to make it stand out. 
+			</p>
+			<h2>Changes to script.js</h2>
+			<p>
+				As we started working separately on specific features, we realized it would be better to add separate Javascript files for each feature. This would make the code more readable and organized, and also prevent merge conflicts. Because of this, script.js was split into formfeedback.js (table reservation form), lazy.js (lazy loading of images), menu.js (visual expansion and contraction of menus upon hovering), scroll.js (hijack-scrolling) and wine.js (wine menu). This proved to be quite useful.
+			</p>
+			<h2>Changes to logo</h2>
+			<p>
+				While a logo was made, it didn't fit the theme of the website. Neither of us are visual artists, and the logo looked more cartoon-like than something that would fit a restaurant targeted towards upper-class consumers. Instead, we made a simplified version of the logo and set it as the favicon of the website.
+			</p>
+    	</section>
+    	<section>
+    		<h2>Updated organizational scheme</h2>
+    		<p>
+    			This is the updated file structure of the website.
+    		</p>
+    		<ul>
+    			<li>index.html</li>
+    			<li>css</li>
+    			<ul>
+    				<li>main.css</li>
+    			</ul>
+    			<li>img</li>
+    			<ul>
+    				<li>favicon.png</li>
+    				<li>jumbotron.jpg</li>
+    				<li>reservations.jpg</li>
+    				<li>spring.jpg</li>
+    				<li>summer.jpg</li>
+    				<li>fall.jpg</li>
+    				<li>winter.jpg</li>
+    			</ul>
+    			<li>script</li>
+    			<ul>
+    				<li>formfeedback.js</li>
+    				<li>lazy.js</li>
+    				<li>menu.js</li>
+    				<li>scroll.js</li>
+    				<li>wine.js</li>
+    			</ul>
+    		</ul>
+    	</section>
+    	<section>
+    		<h2>Work delegation</h2>
+    		<p>
+    			We worked mostly in a group, as we had planned. The person responsible for each work section as specified in P2 did the quality control for their part. A few changes were made due. Below is a complete summary of the final work sections, although it must be mentioned again that we worked together as a group, and some work sections were worked on by more than just the specified leader.
+    		</p>
+    		<table>
+          <thead>
+            <tr>
+              <td>File name</td>
+              <td>Work section</td>
+              <td>Leader</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="5">index.html</td>
+              <td>Front page: header and div for logo</td>
+              <td>Andreas</td>
+            </tr>
+            <tr>
+              <td>Menu: four menus containing a header and text</td>
+              <td>Erik</td>
+            </tr>
+            <tr>
+              <td>Wine menu: menus with wines for each season/menu</td>
+              <td>Erik</td>
+            </tr>
+            <tr>
+              <td>Table reservation: a header and 4 input tags</td>
+              <td>Leonard</td>
+            </tr>
+            <tr>
+              <td>Footer; two p tags and a div for GMaps</td>
+              <td>Leonard</td>
+            </tr>
+            <tr>
+              <td rowspan="2">main.css</td>
+              <td>Font type and colors, and general styling.</td>
+              <td>Andreas</td>
+            </tr>
+            <tr>
+            	<td>General styling</td>
+            	<td>Everyone</td>
+            </tr>
+            <tr>
+              <td>scroll.js</td>
+              <td>Hijack-scrolling: custom scroll system to scroll whole page</td>
+              <td>Fredrik</td>
+            </tr>
+            <tr>
+              <td>menu.js</td>
+              <td>Animations: transition between pages. "Season enlargement"</td>
+              <td>Fredrik</td>
+            </tr>
+            <tr>
+              <td>lazy.js</td>
+              <td>Lazy loading of images</td>
+              <td>Erik</td>
+            </tr>
+            <tr>
+            	<td>formfeedback.js</td>
+            	<td>Verify input of table reservation form</td>
+            	<td>Leonard</td>
+            </tr>
+            <tr>
+              <td>logo.png</td>
+              <td>Finalize logo</td>
+              <td>Andreas</td>
+            </tr>
+            <tr>
+              <td>jumbotron.jpg</td>
+              <td>Find suitable background image at front page</td>
+              <td>Fredrik</td>
+            <tr>
+              <td>seasons/</td>
+              <td>Find suitable background image for each season</td>
+              <td>Erik</td>
+            </tr>
+            <tr>
+              <td>reservations.jpg</td>
+              <td>Find suitable background picture for table reservation page</td>
+              <td>Leonard</td>
+            </tr>
+            <tr>
+              <td>QA</td>
+              <td>
+                General testing. Ensure platform compatibility and
+                responsiveness
+              </td>
+              <td>Everyone</td>
+            </tr>
+          </tbody>
+        </table>
+    	</section>
+    </article>
+</body>
+</html>
