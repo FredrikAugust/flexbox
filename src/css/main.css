@@ -155,19 +155,28 @@ body {
   overflow: hidden;
   height: 80%;
 }
-.under-season>h2 {
+.h2-container {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+.under-season>.h2-container>h2 {
   color: white;
   text-align: center;
   padding: 1em;
-  background-color: rgba(0, 0, 0, 0.418);
   white-space: nowrap;
 }
+
 @media only screen and (max-width: 768px) {
-  .under-season>h2 {
+  .under-season>.h2-container>h2 {
     padding: 4em;
     padding-top: 3em;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: none;
 
+  }
+  .h2-container {
+    width: 100%;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 }
 
