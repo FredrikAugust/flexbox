@@ -94,10 +94,10 @@ body {
     display: block;
   }
   .under-season .form {
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: screen;
     left: 0;
-    width: 90%;
+    width: 95%;
     margin: 1em;
     height: 95vh !important;
   }
