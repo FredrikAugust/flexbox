@@ -60,6 +60,8 @@ body {
 }
 
 .jumbotron p {
+  background-color: rgba(0, 0, 0, 0.76);
+  padding: 5px;
   width: 40vw;
   font-family: 'Playfair Display';
   font-size: 1.2em;
